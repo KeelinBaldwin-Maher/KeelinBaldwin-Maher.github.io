@@ -4,15 +4,6 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 100vh;
-    flex-wrap: wrap;
-    background-color: rgb(10, 0, 14);
-}
-
 article {
     color: rgb(241, 235, 222);
     line-height: 2em;
