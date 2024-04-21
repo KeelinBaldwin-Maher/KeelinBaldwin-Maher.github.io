@@ -4,16 +4,17 @@
     --highlight-magenta: #FF2E8C;
 
     --light-blue: #87C5FF;
-    --light-magenta: #87C5FF;
+    --light-magenta: #FFBDDB;
 
     --dark-blue: #062E53;
     --dark-magenta: #6F143D;
 
     --font-family-primary: "Noto Sans", sans-serif;
-    --font-family-display: font-family: "Bevan", serif;
+    --font-family-display-font: "Bevan", serif;
 
-    --font-family-body: var(--font-family-body);
-    --font-family-heading: var(--font-family-display);
+    --font-family-body: var(--font-family-primary);
+    --font-family-heading: var(--font-family-primary);
+    --font-family-heading-special: var(--font-family-display);
 
     --font-weight-regular: 400;
     --font-weight-bold: 700;
@@ -23,42 +24,36 @@
     --font-size-header-1: 2.5rem;
     --font-size-header-2: 1.65rem;
     --font-size-header-3: 1.25rem;
+
+    --border-thick: 3px solid black;
+    --border-thin: 1px solid black;
 }
 
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    padding: 0 1.25em;
-
-    font-family: "Noto Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
+    
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body);
 }
 
-/* Navigation */
-nav a {
-    text-decoration: none
+/* Nav Bar and Footer */
+nav a,
+footer a {
+    text-decoration: none;
 }
 
-nav ul {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    gap: 20px;
+nav ul,
+footer ul {
     list-style-type: none;
-    background-color: lightblue;
-    justify-items: center;
+    align-items: center;
 }
 
-li {
-    grid-column: span 2;
-}
-
-li.socials {
-    grid-column: 9 / span 1;
+nav li,
+footer li {
+    width: 100%;
     display: flex;
+    justify-content: center;
 }
 
 li.socials a {
@@ -68,13 +63,182 @@ li.socials a {
     border: 1px solid black;
 }
 
-
-/* Main part */
-section {
-    background-color: lightgreen;
-    height: 100%;
+/* Only affects <a> elements that have an <a> element preceding it */
+li.socials a+a {
+    margin-left: 24px;
 }
 
-article {
-    background-color: lightpink;
+nav li {
+    grid-column: span 2;
+}
+
+nav li.logo {
+    grid-column: 1 / span 1;
+    justify-self: start;
+}
+
+nav li.logo a {
+    display: block;
+    font-size: 1.5rem;
+    width: var(--font-size-header-1);
+    height: var(--font-size-header-1);
+}
+
+nav li.socials {
+    grid-column: 8 / 10;
+    justify-content: flex-end;
+}
+
+footer ul.grid-9-column {
+    --footer-padding: 0.5rem;
+
+    gap: var(--footer-padding);
+}
+
+footer li:nth-child(1) {
+    grid-column: 3 / 5;
+    justify-content: flex-end;
+    border-right: var(--border-thin);
+    padding-right: var(--footer-padding);
+}
+footer li:nth-child(3) {
+    grid-column: 6 / 8;
+    justify-content: flex-start;
+    border-left: var(--border-thin);
+    padding-left: var(--footer-padding);
+}
+
+footer li.socials {
+    grid-row: 2;
+    grid-column: 3 / 8;
+    padding: var(--footer-padding) 0 calc(var(--footer-padding) * 2) 0;
+    border-top: var(--border-thin);
+}
+
+
+/* Welcome Section */
+.welcome-text {
+   grid-column: span 5;
+   border: var(--border-thick);
+}
+
+.welcome-text h1 {
+    border-bottom: var(--border-thick);
+    padding: 1.25rem
+}
+
+.welcome-text p {
+    padding: 1.25rem;
+}
+
+.splash-image {
+    grid-column: 7 / 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.splash-image div {
+    height: 100%;
+    flex: 1 1
+}
+
+/* Utility classes */
+.font-body {
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body);
+    font-optical-sizing: auto;
+}
+
+.font-bold {
+    font-weight: var(--font-weight-bold);
+}
+
+.font-italic {
+    font-style: italic;
+}
+
+.font-header-1 {
+    font-family: var(--font-family-heading-special);
+    font-size: var(--font-size-header-1);
+}
+
+.font-header-2 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-header-2);
+    font-weight: var(--font-weight-semi-black);
+}
+
+.font-header-3 {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-header-3);
+    font-weight: var(--font-weight-bold);
+}
+
+.font-color-white {
+    color: white;
+}
+
+.font-color-black {
+    color: black;
+}
+
+.bkg-highlight-blue {
+    background-color: var(--highlight-blue);
+}
+
+.bkg-highlight-yellow {
+    background-color: var(--highlight-yellow);
+}
+
+.bkg-highlight-magenta {
+    background-color: var(--highlight-magenta);
+}
+
+.bkg-light-blue {
+    background-color: var(--light-blue);
+}
+
+.bkg-light-magenta {
+    background-color: var(--light-magenta);
+}
+
+.bkg-dark-blue {
+    background-color: var(--dark-blue);
+}
+
+.bkg-dark-magenta {
+    background-color: var(--dark-magenta);
+}
+
+.drop-shadow {
+    box-shadow: 4px 4px 0 1px #000;
+}
+
+/* This is from:  https://www.youtube.com/watch?v=c13gpBrnGEw*/
+.content-grid {
+    --padding: 1.5em;
+    --max-width: calc(1050px / 2); /* Divided by two for each end of columns */
+    --min-width: calc((100% - (var(--padding) * 2)) / 2);
+
+    display: grid;
+    grid-template-columns: [main-start] minmax(var(--padding), 1fr) 
+    [content-start]  min(var(--max-width), var(--min-width)) 
+    min(var(--max-width), var(--min-width))  [content-end] 
+    minmax(var(--padding), 1fr) [main-end];
+}
+
+/* selector > * - selects all direct children of selector */
+.content-grid > * {
+    grid-column : content;
+}
+
+.grid-9-column {
+    --padding: 1.25em;
+    --max-width: 1580px;
+    --min-width: calc(100% - (var(--padding) * 2));
+    
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    gap: 1rem;
 }

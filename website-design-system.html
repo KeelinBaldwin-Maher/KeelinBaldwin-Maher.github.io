@@ -27,9 +27,6 @@
         }
 
         nav {
-            grid-row: 1;
-            grid-column: 1 / 13;
-
             a {
                 text-decoration: none
             }
@@ -46,7 +43,11 @@
             }
 
             li {
-                grid-column: span 3;
+                grid-column: span 2;
+            }
+
+            li.logo {
+                grid-column: 1 / span 1;
             }
 
             li.socials {

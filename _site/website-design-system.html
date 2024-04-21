@@ -25,9 +25,6 @@
         }
 
         nav {
-            grid-row: 1;
-            grid-column: 1 / 13;
-
             a {
                 text-decoration: none
             }
@@ -44,7 +41,11 @@
             }
 
             li {
-                grid-column: span 3;
+                grid-column: span 2;
+            }
+
+            li.logo {
+                grid-column: 1 / span 1;
             }
 
             li.socials {
@@ -194,14 +195,15 @@
 </head>
 
 <body>
-    <nav>
-    <ul>
-        <li><a href="/index.html" target="_self">Home page</a></li>
+    <nav class="content-grid">
+    <ul class="grid-9-column">
+        <li class="logo"><a href="/index.html" target="_self">&#128640;</a></li>
+        <li><a href="/index.html" target="_self">Projects</a></li>
         <li><a href="/website-design-system.html" target="_self">Design</a></li>
         <li><a href="http://" target="_self">Contact</a></li>
-        <li class="socials">
-            <a href="http://" target="_self">In</a>
-            <a href="http://" target="_self">GH</a>
+        <li class="socials" aria-label="Social Media">
+            <a aria-label="LinkedIn" href="http://" target="_self">In</a>
+            <a aria-label="GitHub" href="http://" target="_self">GH</a>
         </li>
     </ul>
 </nav>
