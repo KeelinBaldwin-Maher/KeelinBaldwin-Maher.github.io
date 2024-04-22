@@ -1,6 +1,7 @@
 ---
 layout: default
-title: "Keelin's Portfolio"
+title: Keelin's Portfolio
+email: keelin.baldwinmaher@gmail.com
 ---
 <section class="welcome-section grid-9-column">
     <article class="welcome-text bkg-light-magenta font-body drop-shadow">
@@ -15,38 +16,26 @@ title: "Keelin's Portfolio"
     </div>
 </section>
 
-<section>
-    <article class="project-card">
-        <picture class="project-card-picture">
-            <div class="bkg-highlight-magenta"></div>
-            <div class="bkg-highlight-blue"></div>
-            <div class="bkg-highlight-yellow"></div>
-        </picture>
-        <article class="project-description font-body">
-            <h3 class="font-header3">Project Title</h3>
-            <p>This is text giving a basic explanation of the project</p>
-        </article>
-    </article>
-    <article class="project-card">
-        <picture class="project-card-picture">
-            <div class="bkg-highlight-magenta"></div>
-            <div class="bkg-highlight-blue"></div>
-            <div class="bkg-highlight-yellow"></div>
-        </picture>
-        <article class="project-description font-body">
-            <h3 class="font-header3">Project Title</h3>
-            <p>This is text giving a basic explanation of the project</p>
-        </article>
-    </article>
-    <article class="project-card">
-        <picture class="project-card-picture">
-            <div class="bkg-highlight-magenta"></div>
-            <div class="bkg-highlight-blue"></div>
-            <div class="bkg-highlight-yellow"></div>
-        </picture>
-        <article class="project-description font-body">
-            <h3 class="font-header3">Project Title</h3>
-            <p>This is text giving a basic explanation of the project</p>
-        </article>
-    </article>
+<section id="projects" class="project-section">
+    <h2 class="font-header-2">Projects</h2>
+    {% include project-card.html %}
+    {% include project-card.html %}
+    {% include project-card.html %}
+</section>
+
+<section id="contact" class="contact-section grid-9-column">
+    <h2>Contact</h2>
+    <div class="contact-text drop-shadow bkg-light-magenta">
+        <p>Drop me a line at: <a href="mailto:{{page.email}}">{{ page.email }}</a></p>
+        <p>Or use this neat form --></p>
+    </div>
+    <form action="#" method="" class="contact-form">
+        <div class="contact-form-inner-container drop-shadow">
+            <label for="name">Name:</label><input type="text" name="name" id="name">
+            <label for="email">Email:</label><input type="email" name="email" id="email">
+            <label for="subject">Subject:</label><input type="text" name="subject" id="subject">
+            <label for="message">Message</label><textarea name="message" id="message"></textarea>
+        </div>
+        <input type="submit" value="Send">
+    </form>
 </section>
