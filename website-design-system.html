@@ -1,4 +1,5 @@
 ---
+layout: default
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -24,42 +25,6 @@
 
         section:last-child {
             margin-bottom: 5em;
-        }
-
-        nav {
-            a {
-                text-decoration: none
-            }
-
-            ul {
-                display: grid;
-                grid-template-columns: repeat(12, minmax(0, 1fr));
-                gap: 20px;
-                padding: 0;
-                margin: 0;
-
-                list-style-type: none;
-                justify-items: center;
-            }
-
-            li {
-                grid-column: span 2;
-            }
-
-            li.logo {
-                grid-column: 1 / span 1;
-            }
-
-            li.socials {
-                grid-column: 12 / span 1;
-                display: flex;
-            }
-
-            li.socials a {
-                display: block;
-                width: 24px;
-                height: 24px;
-            }
         }
 
         h1 {
@@ -201,7 +166,6 @@
 </head>
 
 <body>
-    {% include navigation.html %}
 
     <h1>Website Design</h1>
     <section class="colors">

@@ -1,12 +1,20 @@
 <nav class="content-grid">
     <ul class="grid-9-column">
-        <li class="logo"><a href="/index.html" target="_self">&#128640;</a></li>
-        <li><a href="/index.html#projects" target="_self">Projects</a></li>
-        <li><a href="/website-design-system.html" target="_self">Resume</a></li>
-        <li><a href="/index.html#contact" target="_self">Contact</a></li>
+        <li class="logo"><a aria-label="home" href="/index.html" target="_self">&#128640;</a></li>
+
+        {% for link in site.data.navigation %}
+            {% if link.type == "page" %}
+                <li><a href="{{ link.link }}" target="_self">{{ link.name }}</a></li>
+            {% endif %}
+        {% endfor %}
+
         <li class="socials" aria-label="Social Media">
-            <a aria-label="LinkedIn" href="http://" target="_self">LinkedIn</a>
-            <a aria-label="GitHub" href="http://" target="_self">GitHub</a>
+            {% for link in site.data.navigation %}
+                {% if link.type == "social-media" %}
+                    <a aria-label="{{ link.name }}" href="{{ link.link }}" target="_self">{{ link.name }}</a>
+                {% endif %}
+            {% endfor %}
         </li>
+        
     </ul>
 </nav>

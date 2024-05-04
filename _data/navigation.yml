@@ -1,0 +1,19 @@
+- name: Projects
+  type: page
+  link: /#projects
+
+- name: Resume
+  type: page
+  link: /Resume.html
+
+- name: Contact
+  type: page
+  link: /#contact
+  
+- name: GitHub
+  type: social-media
+  link: http://
+
+- name: LinkedIn
+  type: social-media
+  link: http://

@@ -1,2 +1,0 @@
-So I read that {% include %} had deprecated, now {% render %} is recommended.
-Because of this change I'm going to call the folder components - like a react file structure.
