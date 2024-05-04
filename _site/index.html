@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
@@ -20,22 +20,22 @@
     <link rel="manifest" href="./favicion_io/site.webmanifest">
 </head>
 
-<body>
+<body class="font-body">
     <nav class="content-grid">
     <ul class="grid-9-column">
         <li class="logo"><a href="/index.html" target="_self">&#128640;</a></li>
         <li><a href="/index.html#projects" target="_self">Projects</a></li>
-        <li><a href="/website-design-system.html" target="_self">Design</a></li>
+        <li><a href="/website-design-system.html" target="_self">Resume</a></li>
         <li><a href="/index.html#contact" target="_self">Contact</a></li>
         <li class="socials" aria-label="Social Media">
-            <a aria-label="LinkedIn" href="http://" target="_self">In</a>
-            <a aria-label="GitHub" href="http://" target="_self">GH</a>
+            <a aria-label="LinkedIn" href="http://" target="_self">LinkedIn</a>
+            <a aria-label="GitHub" href="http://" target="_self">GitHub</a>
         </li>
     </ul>
 </nav>
     <main class="content-grid">
         <section class="welcome-section grid-9-column">
-    <article class="welcome-text bkg-light-magenta font-body drop-shadow">
+    <article class="welcome-text bkg-light-magenta drop-shadow">
         <h1 class="font-header-1">Hello!</h1>
         <p>I am a software developer! This is my affable, professional, and non-boring intro!</p>
     </article>
@@ -55,11 +55,13 @@
         <div class="bkg-highlight-blue"></div>
         <div class="bkg-highlight-yellow"></div>
     </picture>
+    <article class="project-description">
         <h3 class="font-header-3">Project Title</h3>
-        <p class="project-description font-body">
+        <p>
             This is text giving a basic explanation of the project
         </p>
-    <button>View Project</button>
+    </article>
+    <button class="button font-header-4">View Project</button>
 </article>
     <article class="project-card grid-9-column drop-shadow">
     <picture class="project-card-picture">
@@ -67,11 +69,13 @@
         <div class="bkg-highlight-blue"></div>
         <div class="bkg-highlight-yellow"></div>
     </picture>
+    <article class="project-description">
         <h3 class="font-header-3">Project Title</h3>
-        <p class="project-description font-body">
+        <p>
             This is text giving a basic explanation of the project
         </p>
-    <button>View Project</button>
+    </article>
+    <button class="button font-header-4">View Project</button>
 </article>
     <article class="project-card grid-9-column drop-shadow">
     <picture class="project-card-picture">
@@ -79,18 +83,20 @@
         <div class="bkg-highlight-blue"></div>
         <div class="bkg-highlight-yellow"></div>
     </picture>
+    <article class="project-description">
         <h3 class="font-header-3">Project Title</h3>
-        <p class="project-description font-body">
+        <p>
             This is text giving a basic explanation of the project
         </p>
-    <button>View Project</button>
+    </article>
+    <button class="button font-header-4">View Project</button>
 </article>
 </section>
 
 <section id="contact" class="contact-section grid-9-column">
-    <h2>Contact</h2>
+    <h2 class="font-header-2">Contact</h2>
     <div class="contact-text drop-shadow bkg-light-magenta">
-        <p>Drop me a line at: <a href="mailto:keelin.baldwinmaher@gmail.com">keelin.baldwinmaher@gmail.com</a></p>
+        <p>Drop me a line at: <a class="font-color-dark-blue" href="mailto:keelin.baldwinmaher@gmail.com">keelin.baldwinmaher@gmail.com</a></p>
         <p>Or use this neat form --></p>
     </div>
     <form action="#" method="" class="contact-form">
@@ -98,16 +104,17 @@
             <label for="name">Name:</label><input type="text" name="name" id="name">
             <label for="email">Email:</label><input type="email" name="email" id="email">
             <label for="subject">Subject:</label><input type="text" name="subject" id="subject">
-            <label for="message">Message</label><textarea name="message" id="message"></textarea>
+            <label for="message">Message</label>
+            <textarea name="message" id="message">...</textarea>
         </div>
-        <input type="submit" value="Send">
+        <input class="button font-header-4" type="submit" value="Send">
     </form>
 </section>
     </main>
     <footer class="content-grid">
     <ul class="grid-9-column">
         <li><a href="/index.html#projects" target="_self">Projects</a></li>
-        <li><a href="/website-design-system.html" target="_self">Design</a></li>
+        <li><a href="/website-design-system.html" target="_self">Resume</a></li>
         <li><a href="/index.html#contact" target="_self">Contact</a></li>
         <li class="socials" aria-label="Social Media">
             <a aria-label="LinkedIn" href="http://" target="_self">In</a>
