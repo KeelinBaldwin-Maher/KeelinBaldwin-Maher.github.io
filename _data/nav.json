@@ -1,0 +1,12 @@
+{
+    "pages":[
+        {"name": "projects", "link": "/#projects"},
+        {"name": "resume", "link": "/resume.html"},
+        {"name": "contact", "link": "/#contact"}
+    ],
+
+    "social-media":[
+        {"name": "LinkedIn", "link": "http://"},
+        {"name": "GitHub", "link": "http://"}
+    ]
+}

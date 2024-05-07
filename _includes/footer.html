@@ -1,16 +1,14 @@
 <footer class="content-grid">
     <ul class="grid-9-column">
-        {% for link in site.data.navigation %}
-            {% if link.type == "page" %}
-                <li><a href="{{ link.link }}" target="_self">{{ link.name }}</a></li>
-            {% endif %}
+        {% for link in site.data.nav.pages %}
+            <li><a href="{{ link.link }}" target="_self">{{ link.name }}</a></li>
         {% endfor %}
 
         <li class="socials" aria-label="Social Media">
-            {% for link in site.data.navigation %}
-                {% if link.type == "social-media" %}
-                    <a aria-label="{{ link.name }}" href="{{ link.link }}" target="_self">{{ link.name }}</a>
-                {% endif %}
+            {% for link in site.data.nav.social-media %}
+                <a href="{{ link.link }}" target="_self">
+                    <span class="visually-hidden">{{ link.name }}</span>
+                </a>
             {% endfor %}
         </li>
     </ul>
