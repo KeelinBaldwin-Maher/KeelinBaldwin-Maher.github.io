@@ -31,12 +31,12 @@
     --border-thick: 3px solid black;
     --border-thin: 1px solid black;
 
-    --padding-025: 0.25rem;
-    --padding-050: 0.5rem;
-    --padding-100: 1rem;
-    --padding-125: 1.25rem;
-    --padding-150: 1.5rem;
-    --padding-200: 2rem;
+    --size-025: 0.25rem;
+    --size-050: 0.5rem;
+    --size-100: 1rem;
+    --size-125: 1.25rem;
+    --size-150: 1.5rem;
+    --size-200: 2rem;
 }
 
 body {
@@ -68,7 +68,7 @@ footer li {
 }
 
 nav {
-    padding-top: var(--padding-050);
+    padding-top: var(--size-050);
 }
 
 li.socials a {
@@ -107,25 +107,25 @@ nav li.socials {
 }
 
 footer ul.grid-9-column {
-    gap: var(--padding-050);
+    gap: var(--size-050);
 }
 
 footer li:nth-child(1) {
     grid-column: 4 / 5;
     border-right: var(--border-thin);
-    padding-right: var(--padding-050);
+    padding-right: var(--size-050);
 }
 
 footer li:nth-child(3) {
     grid-column: 6 / 7;
     border-left: var(--border-thin);
-    padding-left: var(--padding-050);
+    padding-left: var(--size-050);
 }
 
 footer li.socials {
     grid-row: 2;
     grid-column: 3 / 8;
-    padding: var(--padding-050) 0 var(--padding-125) 0;
+    padding: var(--size-050) 0 var(--size-125) 0;
     border-top: var(--border-thin);
 }
 
@@ -142,11 +142,11 @@ footer li.socials {
 
 .welcome-text .font-header-1 {
     border-bottom: var(--border-thick);
-    padding: var(--padding-100) var(--padding-125);
+    padding: var(--size-100) var(--size-125);
 }
 
 .welcome-text p {
-    padding: var(--padding-125);
+    padding: var(--size-125);
 }
 
 .splash-image {
@@ -164,8 +164,8 @@ footer li.socials {
 }
 
 .project-section .font-header-2 {
-    padding-top: var(--padding-050);
-    padding-bottom: var(--padding-125);
+    padding-top: var(--size-050);
+    padding-bottom: var(--size-125);
 }
 
 .project-card {
@@ -186,38 +186,38 @@ footer li.socials {
 .project-description {
     grid-column: 5 / 10;
     grid-row: 1;
-    padding: var(--padding-125) var(--padding-125) var(--padding-125) 0;
+    padding: var(--size-125) var(--size-125) var(--size-125) 0;
 }
 
 .project-description .font-header-3 {
-    padding-bottom: var(--padding-100);
+    padding-bottom: var(--size-100);
 }
 
 .project-card .button {
     grid-column: 5 / span 2;
     grid-row: 2;
-    margin-bottom: var(--padding-125);
+    margin-bottom: var(--size-125);
 }
 
 /* Contact */
 .contact-section {
-    margin-bottom: min(15%, 100px);
+    margin-bottom: min(20%, 200px);
     align-items: start;
 }
 
 .contact-section .font-header-2 {
     grid-column: 1 / -1;
-    padding-top: var(--padding-050);
+    padding-top: var(--size-050);
 }
 
 .contact-text {
     grid-column: span 3;
     border: var(--border-thick);
-    padding: var(--padding-125);
+    padding: var(--size-125);
 }
 
 .contact-text p + p {
-    padding-top: var(--padding-100);
+    padding-top: var(--size-100);
 }
 
 .contact-form {
@@ -226,7 +226,7 @@ footer li.socials {
 
 .contact-form-inner-container {
     border: var(--border-thick);
-    margin-bottom: var(--padding-125);
+    margin-bottom: var(--size-125);
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: center;
@@ -235,7 +235,7 @@ footer li.socials {
 .contact-form-inner-container label {
     text-align: end;
     background-color: var(--light-blue);
-    padding: var(--padding-050); 
+    padding: var(--size-050); 
     border: var(--border-thin);
     border-top: 0;
 }
@@ -256,7 +256,7 @@ footer li.socials {
 }
 
 .contact-form-inner-container #message {
-    padding: var(--padding-050) var(--padding-125);
+    padding: var(--size-050) var(--size-125);
     grid-column: span 4;
     min-height: calc(var(--font-size-body) * 30);
     resize: none;
@@ -270,12 +270,25 @@ footer li.socials {
     cursor: pointer;
     text-decoration: none;
     line-height: 1;
-    padding: var(--padding-050);
+    padding: var(--size-050);
 }
 
 
 
 /* Utility classes */
+.visually-hidden {  /* https://a11y-guidelines.orange.com/en/articles/accessible-hiding/# */
+    position: absolute;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 .font-body {
     font-family: var(--font-family-body);
     font-size: var(--font-size-body);
@@ -381,7 +394,7 @@ footer li.socials {
 
 .grid-9-column {
     --max-width: 1580px;
-    --min-width: calc(100% - (var(--padding-125) * 2));
+    --min-width: calc(100% - (var(--size-125) * 2));
     
     display: grid;
     grid-template-columns: repeat(9, minmax(auto, 1fr));
