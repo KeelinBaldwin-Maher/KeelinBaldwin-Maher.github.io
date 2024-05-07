@@ -241,6 +241,7 @@ footer li.socials {
 }
 
 .contact-form-inner-container input {
+    padding: var(--size-050) var(--size-125);
     height: 100%;
     border: none;
     border-bottom: var(--border-thin);
