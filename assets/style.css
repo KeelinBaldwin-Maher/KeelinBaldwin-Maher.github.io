@@ -228,11 +228,17 @@ footer li.socials {
     border: var(--border-thick);
     margin-bottom: var(--size-125);
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-areas: 
+        "name       name-i     name-i     email      email-i    email-i"
+        "subject    subject-i  subject-i  subject-i  subject-i  subject-i"
+        "message    message    message    message    message    message"
+        "message-i  message-i  message-i  message-i  message-i  message-i";
     align-items: center;
 }
 
 .contact-form-inner-container label {
+    font-family: var(--font-family-mono);
     text-align: end;
     background-color: var(--light-blue);
     padding: var(--size-050); 
@@ -241,29 +247,53 @@ footer li.socials {
 }
 
 .contact-form-inner-container input {
-    padding: var(--size-050) var(--size-125);
+    padding: var(--size-050);
     height: 100%;
     border: none;
     border-bottom: var(--border-thin);
 }
 
+.contact-form-inner-container label[for="name"] {
+    grid-area: name;
+}
+
+.contact-form-inner-container #name {
+    grid-area: name-i;
+}
+
+.contact-form-inner-container label[for="email"] {
+    grid-area: email;
+}
+
+.contact-form-inner-container #email {
+    grid-area: email-i;
+}
+
+.contact-form-inner-container label[for="subject"] {
+    grid-area: subject;    
+}
+
 .contact-form-inner-container #subject {
-    grid-column: span 3;
+    grid-area: subject-i;
 }
 
 .contact-form-inner-container label[for="message"] {
     text-align: center;
-    grid-column: span 4;
+    grid-area: message;
 }
 
 .contact-form-inner-container #message {
+    grid-area: message-i;
     padding: var(--size-050) var(--size-125);
-    grid-column: span 4;
     min-height: calc(var(--font-size-body) * 30);
     resize: none;
     border: none;
     border-right: var(--border-thin);
     border-left: var(--border-thin);
+}
+
+.contact-form input[type="submit"] {
+    width: 30%;
 }
 
 /* Button */

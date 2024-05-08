@@ -1,8 +1,8 @@
 {
     "pages":[
-        {"name": "projects", "link": "/#projects"},
-        {"name": "resume", "link": "/resume.html"},
-        {"name": "contact", "link": "/#contact"}
+        {"name": "Projects", "link": "/#projects"},
+        {"name": "Resume", "link": "/resume.html"},
+        {"name": "Contact", "link": "/#contact"}
     ],
 
     "social-media":[
