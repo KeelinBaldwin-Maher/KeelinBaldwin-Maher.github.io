@@ -1,0 +1,52 @@
+{
+  "experience": 
+    [
+    {
+      "company": "Company Name",
+      "location": "Calgary, AB",
+      "dates": "00/0000 - 00/0000",
+      "descriptions": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua.", 
+        "Ger mi sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua."
+      ]
+    },
+    {
+      "company": "Company Name",
+      "location": "Calgary, AB",
+      "dates": "00/0000 - 00/0000",
+      "descriptions": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua.", 
+        "Ger mi sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua."
+      ]
+    },
+    {
+      "company": "Company Name",
+      "location": "Calgary, AB",
+      "dates": "00/0000 - 00/0000",
+      "descriptions": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua.", 
+        "Ger mi sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua."
+      ]
+    }
+  ],
+  "education":[
+    {
+      "degree": "Diploma in Software Development",
+      "school": "Souther Alberta Institute of Technology",
+      "location": "Calgary, AB",
+      "dates": "2021/09 - 2023/05"
+    },
+    {
+      "degree": "Bachelor of Design in Graphic Design and Illustration",
+      "school": "Alberta University of the Arts",
+      "location": "Calgary, AB",
+      "dates": "2014/01 - 2019/05"
+    }
+  ],
+  "skills": [
+    "One", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"
+  ]
+}

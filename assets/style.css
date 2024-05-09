@@ -33,16 +33,23 @@
 
     --size-025: 0.25rem;
     --size-050: 0.5rem;
+    --size-075: 0.75rem;
     --size-100: 1rem;
     --size-125: 1.25rem;
     --size-150: 1.5rem;
     --size-200: 2rem;
+    --size-400: 4rem;
+    --size-500: 5rem;
+
+    --size-min-10-075: min(10%, 75px);
+    --size-min-15-100: min(15%, 100px);
+    --size-min-20-200: min(20%, 200px);
 }
 
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    
+
     font-family: var(--font-family-body);
     font-size: var(--font-size-body);
 }
@@ -81,7 +88,8 @@ li.socials a {
     overflow: hidden;
 }
 
-li.socials a+a { /* Only affects <a> elements that have an <a> element preceding it */
+li.socials a+a {
+    /* Only affects <a> elements that have an <a> element preceding it */
     margin-left: 24px;
 }
 
@@ -104,6 +112,10 @@ nav li.logo a {
 nav li.socials {
     grid-column: 8 / 10;
     justify-content: flex-end;
+}
+
+footer {
+    margin-top: var(--size-min-20-200);
 }
 
 footer ul.grid-9-column {
@@ -129,15 +141,23 @@ footer li.socials {
     border-top: var(--border-thin);
 }
 
+/* Button */
+.button {
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1;
+    padding: var(--size-050);
+    width: fit-content;
+}
 
 /* Welcome Section */
 .welcome-section {
-    margin-top: min(15%, 100px);
+    margin-top: var(--size-min-15-100);
 }
 
 .welcome-text {
-   grid-column: span 4;
-   border: var(--border-thick);
+    grid-column: span 4;
+    border: var(--border-thick);
 }
 
 .welcome-text .font-header-1 {
@@ -158,9 +178,9 @@ footer li.socials {
     flex: 1 1;
 }
 
-/* Projects */
+/* Projects Section*/
 .project-section {
-    margin-top: min(20%, 125px);
+    margin-top: var(--size-min-15-100);
 }
 
 .project-section .font-header-2 {
@@ -170,7 +190,7 @@ footer li.socials {
 
 .project-card {
     border: var(--border-thick);
-    margin-bottom: min(10%, 100px);
+    margin-bottom: var(--size-min-15-100);
 }
 
 .project-card-picture {
@@ -194,14 +214,13 @@ footer li.socials {
 }
 
 .project-card .button {
-    grid-column: 5 / span 2;
+    grid-column: 5 / -1;
     grid-row: 2;
     margin-bottom: var(--size-125);
 }
 
-/* Contact */
+/* Contact Section*/
 .contact-section {
-    margin-bottom: min(20%, 200px);
     align-items: start;
 }
 
@@ -216,7 +235,7 @@ footer li.socials {
     padding: var(--size-125);
 }
 
-.contact-text p + p {
+.contact-text p+p {
     padding-top: var(--size-100);
 }
 
@@ -228,8 +247,8 @@ footer li.socials {
     border: var(--border-thick);
     margin-bottom: var(--size-125);
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-template-areas: 
+    grid-template-columns: repeat(6, minmax(auto, 1fr));
+    grid-template-areas:
         "name       name-i     name-i     email      email-i    email-i"
         "subject    subject-i  subject-i  subject-i  subject-i  subject-i"
         "message    message    message    message    message    message"
@@ -241,7 +260,7 @@ footer li.socials {
     font-family: var(--font-family-mono);
     text-align: end;
     background-color: var(--light-blue);
-    padding: var(--size-050); 
+    padding: var(--size-050);
     border: var(--border-thin);
     border-top: 0;
 }
@@ -270,7 +289,7 @@ footer li.socials {
 }
 
 .contact-form-inner-container label[for="subject"] {
-    grid-area: subject;    
+    grid-area: subject;
 }
 
 .contact-form-inner-container #subject {
@@ -296,28 +315,127 @@ footer li.socials {
     width: 30%;
 }
 
-/* Button */
-.button {
-    cursor: pointer;
-    text-decoration: none;
-    line-height: 1;
-    padding: var(--size-050);
+/* Resume Section */
+.resume-section {
+    margin-top: var(--size-min-15-100);
 }
 
+.resume-section .font-header-1 {
+    margin-bottom: var(--size-150);
+}
 
+.experience >* ,
+.education > * {
+    border: var(--border-thin);
+    border-bottom: 0;
+}
+
+.experience .font-header-2, 
+.education .font-header-2,
+.skills .font-header-2 {
+    padding: var(--size-125) var(--size-100);
+}
+
+.company.grid-9-column {
+    gap: 0rem;
+    grid-template-areas:
+        "c c c de de de de de de"
+        "l l l de de de de de de"
+        "d d d de de de de de de";
+}
+
+.company > * {
+    padding: var(--size-100);
+    border-bottom: var(--border-thin);
+}
+
+.company-name {
+    grid-area: c;
+    padding-bottom: var(--size-400);
+}
+
+.company-location {
+    grid-area: l;
+}
+
+.company-dates {
+    grid-area: d;
+    border-bottom: 0;
+}
+
+.company-experience-description {
+    grid-area: de;
+    border-left: var(--border-thin);
+    border-bottom: 0;
+}
+
+.company-experience-description li {
+    margin-left: var(--size-125);
+    margin-bottom: var(--size-075);
+}
+
+.school.grid-9-column {
+    gap: 0;
+    grid-template-areas: 
+        "s s s n n n n d d";
+}
+
+.school > * {
+    padding: var(--size-100);
+    border-right: var(--border-thin);
+}
+
+.school-degree {
+    grid-area: s;
+}
+
+.school-name {
+    grid-area: n;
+}
+
+.school-dates {
+    grid-area: d;
+    border-right: 0;
+}
+
+.skills .font-header-2 {
+    border: var(--border-thin);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.skill {
+    aspect-ratio: 1 / 1;
+    padding: var(--size-100);
+}
+
+.skill:first-child,
+.skill:nth-child(8) {
+    border-left: var(--border-thin);
+}
+
+.skill:nth-child(-n + 6),
+.skill:nth-child(-n + 10) {
+    border-right: var(--border-thin);
+    border-bottom: var(--border-thin);
+}
 
 /* Utility classes */
-.visually-hidden {  /* https://a11y-guidelines.orange.com/en/articles/accessible-hiding/# */
+.visually-hidden {
+    /* https://a11y-guidelines.orange.com/en/articles/accessible-hiding/# */
     position: absolute;
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0,0,0,0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
 }
 
 .font-body {
@@ -354,7 +472,6 @@ footer li.socials {
 .font-header-4 {
     font-family: var(--font-family-mono);
     font-size: var(--font-size-header-4);
-    font-weight: var(--font-weight-bold);
 }
 
 .font-color-white {
@@ -408,25 +525,23 @@ footer li.socials {
 /* This is from:  https://www.youtube.com/watch?v=c13gpBrnGEw */
 .content-grid {
     --padding: 1.5em;
-    --max-width: calc(1050px / 2); /* Divided by two for each end of columns */
+    --max-width: calc(1050px / 2);
+    /* Divided by two for each end of columns */
     --min-width: calc((100% - (var(--padding) * 2)) / 2);
 
     display: grid;
-    grid-template-columns: [main-start] minmax(var(--padding), 1fr) 
-    [content-start]  min(var(--max-width), var(--min-width)) 
-    min(var(--max-width), var(--min-width))  [content-end] 
-    minmax(var(--padding), 1fr) [main-end];
+    grid-template-columns: [main-start] minmax(var(--padding), 1fr) [content-start] min(var(--max-width), var(--min-width)) min(var(--max-width), var(--min-width)) [content-end] minmax(var(--padding), 1fr) [main-end];
 }
 
 /* selector > * - selects all direct children of selector */
-.content-grid > * {
-    grid-column : content;
+.content-grid>* {
+    grid-column: content;
 }
 
 .grid-9-column {
     --max-width: 1580px;
     --min-width: calc(100% - (var(--size-125) * 2));
-    
+
     display: grid;
     grid-template-columns: repeat(9, minmax(auto, 1fr));
     gap: 1rem;
