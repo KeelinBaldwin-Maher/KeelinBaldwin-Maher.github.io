@@ -15,6 +15,7 @@
             {% for link in site.data.nav.social-media %}
                 <a href="{{ link.link }}" target="_self">
                     <span class="visually-hidden">{{ link.name }}</span>
+                    {{ link.svg }}
                 </a>
             {% endfor %}
         </li>
