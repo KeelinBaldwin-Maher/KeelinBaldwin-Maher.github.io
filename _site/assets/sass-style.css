@@ -25,6 +25,7 @@
   --border-300: 3px solid black;
   --border-200: 2px solid black;
   --border-100: 1px solid black;
+  --size-010: 0.1rem;
   --size-025: 0.25rem;
   --size-050: 0.5rem;
   --size-075: 0.75rem;
@@ -33,9 +34,11 @@
   --size-150: 1.5rem;
   --size-175: 1.75rem;
   --size-200: 2rem;
+  --size-250: 2.5rem;
   --size-350: 3.5rem;
   --size-400: 4rem;
   --size-500: 5rem;
+  --size-600: 6rem;
   --size-800: 8rem;
 }
 
@@ -239,6 +242,27 @@ nav li {
   grid-column: span 2;
 }
 
+nav li:nth-child(n+2):nth-child(-n+4) ::before {
+  content: "";
+  background-color: rgb(0, 0, 0);
+  height: var(--size-010);
+  width: var(--size-600);
+  position: absolute;
+  top: var(--size-250);
+  transform: scale(0);
+  transition: transform ease 0.2s;
+}
+
+nav li:hover:nth-child(n+2):nth-child(-n+4) ::before {
+  content: "";
+  background-color: rgb(0, 0, 0);
+  height: var(--size-010);
+  width: var(--size-600);
+  position: absolute;
+  top: var(--size-250);
+  transform: scale(1);
+}
+
 nav li.logo {
   grid-column: 1/span 1;
   justify-self: start;
@@ -296,7 +320,7 @@ footer li.socials {
 }
 
 .welcome-text .font-header-1 {
-  border-bottom: var(--border-300);
+  border-bottom: var(--border-200);
   padding: var(--size-075) var(--size-125);
 }
 
@@ -380,7 +404,7 @@ footer li.socials {
 
 .contact-text {
   grid-column: span 3;
-  border: var(--border-300);
+  border: var(--border-200);
   padding: var(--size-125);
 }
 

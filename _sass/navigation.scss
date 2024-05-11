@@ -34,6 +34,7 @@ footer li.socials svg {
     width: var(--size-175);
 }
 
+// Nav Bar
 nav {
     padding: var(--size-050) 0;
     border-bottom: var(--border-200);
@@ -60,6 +61,27 @@ nav li {
     grid-column: span 2;
 }
 
+nav li:nth-child(n + 2):nth-child(-n + 4) ::before {
+    content: "";
+    background-color: rgb(0, 0, 0);
+    height: var(--size-010);
+    width: var(--size-600);
+    position: absolute;
+    top: var(--size-250);
+    transform: scale(0);
+    transition: transform ease 0.2s;
+}
+
+nav li:hover:nth-child(n + 2):nth-child(-n + 4) ::before {
+    content: "";
+    background-color: rgb(0, 0, 0);
+    height: var(--size-010);
+    width: var(--size-600);
+    position: absolute;
+    top: var(--size-250);
+    transform: scale(1);
+}
+
 nav li.logo {
     grid-column: 1 / span 1;
     justify-self: start;
@@ -77,6 +99,7 @@ nav li.socials {
     justify-content: flex-end;
 }
 
+// Footer
 footer {
     margin-top: var(--size-500);
 }
