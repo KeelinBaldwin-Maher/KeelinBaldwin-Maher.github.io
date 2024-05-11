@@ -46,6 +46,137 @@ body {
   font-size: var(--font-size-body);
 }
 
+/* Button */
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  padding: var(--size-050);
+  width: fit-content;
+}
+
+/* Utility classes */
+.visually-hidden {
+  /* https://a11y-guidelines.orange.com/en/articles/accessible-hiding/# */
+  position: absolute;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.font-body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body);
+  font-optical-sizing: auto;
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.font-header-1 {
+  font-family: var(--font-family-heading-special);
+  font-size: var(--font-size-header-1);
+}
+
+.font-header-2 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-header-2);
+  font-weight: var(--font-weight-semi-black);
+}
+
+.font-header-3 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-header-3);
+  font-weight: var(--font-weight-bold);
+}
+
+.font-header-4 {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-header-4);
+}
+
+.font-color-white {
+  color: white;
+}
+
+.font-color-black {
+  color: black;
+}
+
+.font-color-dark-blue {
+  color: var(--dark-blue);
+}
+
+.font-color-dark-magenta {
+  color: var(--dark-magenta);
+}
+
+.bkg-highlight-blue {
+  background-color: var(--highlight-blue);
+}
+
+.bkg-highlight-yellow {
+  background-color: var(--highlight-yellow);
+}
+
+.bkg-highlight-magenta {
+  background-color: var(--highlight-magenta);
+}
+
+.bkg-light-blue {
+  background-color: var(--light-blue);
+}
+
+.bkg-light-magenta {
+  background-color: var(--light-magenta);
+}
+
+.bkg-dark-blue {
+  background-color: var(--dark-blue);
+}
+
+.bkg-dark-magenta {
+  background-color: var(--dark-magenta);
+}
+
+.drop-shadow {
+  box-shadow: 3px 3px 0 1px #000;
+}
+
+/* This is from:  https://www.youtube.com/watch?v=c13gpBrnGEw */
+.content-grid {
+  --padding: 1.5em;
+  --max-width: calc(1050px / 2);
+  /* Divided by two for each end of columns */
+  --min-width: calc((100% - (var(--padding) * 2)) / 2);
+  display: grid;
+  grid-template-columns: [main-start] minmax(var(--padding), 1fr) [content-start] min(var(--max-width), var(--min-width)) min(var(--max-width), var(--min-width)) [content-end] minmax(var(--padding), 1fr) [main-end];
+}
+
+/* selector > * - selects all direct children of selector */
+.content-grid > * {
+  grid-column: content;
+}
+
+.grid-9-column {
+  --max-width: 1580px;
+  --min-width: calc(100% - (var(--size-125) * 2));
+  display: grid;
+  grid-template-columns: repeat(9, minmax(auto, 1fr));
+  gap: 1rem;
+}
+
 /* Nav Bar and Footer */
 nav ul,
 footer ul {
@@ -151,15 +282,6 @@ footer li.socials {
   padding: var(--size-050) 0 var(--size-125) 0;
   border-top: var(--border-100);
   justify-content: center;
-}
-
-/* Button */
-.button {
-  cursor: pointer;
-  text-decoration: none;
-  line-height: 1;
-  padding: var(--size-050);
-  width: fit-content;
 }
 
 /* Welcome Section */
@@ -442,126 +564,4 @@ footer li.socials {
   border-bottom: var(--border-100);
 }
 
-/* Utility classes */
-.visually-hidden {
-  /* https://a11y-guidelines.orange.com/en/articles/accessible-hiding/# */
-  position: absolute;
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-}
-
-.font-body {
-  font-family: var(--font-family-body);
-  font-size: var(--font-size-body);
-  font-optical-sizing: auto;
-}
-
-.font-bold {
-  font-weight: var(--font-weight-bold);
-}
-
-.font-italic {
-  font-style: italic;
-}
-
-.font-header-1 {
-  font-family: var(--font-family-heading-special);
-  font-size: var(--font-size-header-1);
-}
-
-.font-header-2 {
-  font-family: var(--font-family-heading);
-  font-size: var(--font-size-header-2);
-  font-weight: var(--font-weight-semi-black);
-}
-
-.font-header-3 {
-  font-family: var(--font-family-heading);
-  font-size: var(--font-size-header-3);
-  font-weight: var(--font-weight-bold);
-}
-
-.font-header-4 {
-  font-family: var(--font-family-mono);
-  font-size: var(--font-size-header-4);
-}
-
-.font-color-white {
-  color: white;
-}
-
-.font-color-black {
-  color: black;
-}
-
-.font-color-dark-blue {
-  color: var(--dark-blue);
-}
-
-.font-color-dark-magenta {
-  color: var(--dark-magenta);
-}
-
-.bkg-highlight-blue {
-  background-color: var(--highlight-blue);
-}
-
-.bkg-highlight-yellow {
-  background-color: var(--highlight-yellow);
-}
-
-.bkg-highlight-magenta {
-  background-color: var(--highlight-magenta);
-}
-
-.bkg-light-blue {
-  background-color: var(--light-blue);
-}
-
-.bkg-light-magenta {
-  background-color: var(--light-magenta);
-}
-
-.bkg-dark-blue {
-  background-color: var(--dark-blue);
-}
-
-.bkg-dark-magenta {
-  background-color: var(--dark-magenta);
-}
-
-.drop-shadow {
-  box-shadow: 3px 3px 0 1px #000;
-}
-
-/* This is from:  https://www.youtube.com/watch?v=c13gpBrnGEw */
-.content-grid {
-  --padding: 1.5em;
-  --max-width: calc(1050px / 2);
-  /* Divided by two for each end of columns */
-  --min-width: calc((100% - (var(--padding) * 2)) / 2);
-  display: grid;
-  grid-template-columns: [main-start] minmax(var(--padding), 1fr) [content-start] min(var(--max-width), var(--min-width)) min(var(--max-width), var(--min-width)) [content-end] minmax(var(--padding), 1fr) [main-end];
-}
-
-/* selector > * - selects all direct children of selector */
-.content-grid > * {
-  grid-column: content;
-}
-
-.grid-9-column {
-  --max-width: 1580px;
-  --min-width: calc(100% - (var(--size-125) * 2));
-  display: grid;
-  grid-template-columns: repeat(9, minmax(auto, 1fr));
-  gap: 1rem;
-}
-
-/*# sourceMappingURL=style-1.css.map */
+/*# sourceMappingURL=sass-style.css.map */
