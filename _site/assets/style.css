@@ -19,6 +19,7 @@
     --font-family-heading-special: var(--font-display);
 
     --font-weight-regular: 400;
+    --font-weight-medium: 500;
     --font-weight-bold: 700;
     --font-weight-semi-black: 800;
 
@@ -38,13 +39,12 @@
     --size-100: 1rem;
     --size-125: 1.25rem;
     --size-150: 1.5rem;
+    --size-175: 1.75rem;
     --size-200: 2rem;
+    --size-350: 3.5rem;
     --size-400: 4rem;
     --size-500: 5rem;
-
-    --size-min-10-075: min(10%, 75px);
-    --size-min-15-100: min(15%, 100px);
-    --size-min-20-200: min(20%, 200px);
+    --size-800: 8rem;
 }
 
 body {
@@ -56,12 +56,6 @@ body {
 }
 
 /* Nav Bar and Footer */
-nav a,
-footer a {
-    text-decoration: none;
-    color: var(--dark-blue);
-}
-
 nav ul,
 footer ul {
     list-style-type: none;
@@ -70,16 +64,37 @@ footer ul {
 
 nav li,
 footer li {
+    display: flex;
+    height: 100%;
+}
+
+nav a,
+footer a {
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-weight: var(--font-weight-medium);
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+nav li.socials, 
+footer li.socials {
+    height: fit-content;
+}
+
+nav li.socials svg,
+footer li.socials svg {
+    fill: var(--dark-blue);
+    height: var(--size-175);
+    width: var(--size-175);
 }
 
 nav {
     padding: var(--size-050) 0;
     border-bottom: var(--border-200);
     background-color: white;
-    box-shadow: 0px 0px 0.3rem rgba(0, 0, 0, 0.25);
     width: 100%;
     position: fixed;
 }
@@ -93,7 +108,7 @@ li.socials a {
     overflow: hidden;
 }
 
-li.socials a+a {
+li.socials a + a {
     /* Only affects <a> elements that have an <a> element preceding it */
     margin-left: 24px;
 }
@@ -120,7 +135,7 @@ nav li.socials {
 }
 
 footer {
-    margin-top: var(--size-min-20-200);
+    margin-top: var(--size-500);
 }
 
 footer ul.grid-9-column {
@@ -144,6 +159,7 @@ footer li.socials {
     grid-column: 3 / 8;
     padding: var(--size-050) 0 var(--size-125) 0;
     border-top: var(--border-100);
+    justify-content: center;
 }
 
 /* Button */
@@ -156,18 +172,19 @@ footer li.socials {
 }
 
 /* Welcome Section */
-.welcome-section {
-    margin-top: var(--size-min-15-100);
+.welcome-section.grid-9-column {
+    margin-top: var(--size-800);
+    gap: var(--size-175);
 }
 
 .welcome-text {
-    grid-column: span 4;
+    grid-column: 1 / span 4;
     border: var(--border-300);
 }
 
 .welcome-text .font-header-1 {
     border-bottom: var(--border-300);
-    padding: var(--size-100) var(--size-125);
+    padding: var(--size-075) var(--size-125);
 }
 
 .welcome-text p {
@@ -175,7 +192,8 @@ footer li.socials {
 }
 
 .splash-image {
-    grid-column: 6 / 10;
+    grid-column: 5 / span 5;
+    grid-row: 1;
     display: flex;
 }
 
@@ -185,7 +203,8 @@ footer li.socials {
 
 /* Projects Section*/
 .project-section {
-    margin-top: var(--size-min-15-100);
+    margin-top: var(--size-500);
+    scroll-margin-top: var(--size-500);
 }
 
 .project-section .font-header-2 {
@@ -195,8 +214,12 @@ footer li.socials {
 
 .project-card.grid-9-column {
     border: var(--border-300);
-    margin-bottom: var(--size-min-15-100);
+    margin-bottom: var(--size-400);
     gap: 0;
+}
+
+.project-section :last-child {
+    margin-bottom: 0;
 }
 
 .project-card-picture {
@@ -232,6 +255,8 @@ footer li.socials {
 
 /* Contact Section*/
 .contact-section {
+    margin-top: var(--size-500);
+    scroll-margin-top: var(--size-500);
     align-items: start;
 }
 
@@ -251,7 +276,7 @@ footer li.socials {
 }
 
 .contact-form {
-    grid-column: 4 / -1;
+    grid-column: span 6;
 }
 
 .contact-form-inner-container {
@@ -328,7 +353,7 @@ footer li.socials {
 
 /* Resume Section */
 .resume-section {
-    margin-top: var(--size-min-15-100);
+    margin-top: var(--size-500);
 }
 
 .resume-section .font-header-1 {
