@@ -14,7 +14,7 @@ footer li {
 nav a,
 footer a {
     text-decoration: none;
-    color: var(--dark-blue);
+    color: black;
     font-weight: var(--font-weight-medium);
     width: 100%;
     display: flex;
@@ -29,7 +29,7 @@ footer li.socials {
 
 nav li.socials svg,
 footer li.socials svg {
-    fill: var(--dark-blue);
+    fill: black;
     height: var(--size-175);
     width: var(--size-175);
 }
@@ -69,6 +69,11 @@ nav li:nth-child(n + 2):nth-child(-n + 4) {
 
 nav li:hover:nth-child(n + 2):nth-child(-n + 4) {
     background-color: var(--light-blue);
+    transition: background-color ease 0.1s;
+}
+
+nav li:active:nth-child(n + 2):nth-child(-n + 4) {
+    background-color: var(--med-blue);
 }
 
 nav li.logo {
@@ -95,6 +100,25 @@ footer {
 
 footer ul.grid-9-column {
     gap: var(--size-050);
+}
+
+footer li:nth-child(-n + 3) a,
+footer li.socials a svg {
+    color: black;
+    transition: color ease 0.2s, fill ease 0.2s;
+}
+
+footer li:hover:nth-child(-n + 3) a,
+footer li.socials a:hover svg{
+    fill: var(--highlight-blue);
+    color: var(--highlight-blue);
+    transition: color ease 0.2s, fill ease 0.2s;
+}
+
+footer li:active:nth-child(-n + 3) a,
+footer li.socials a:active svg {
+    color: var(--med-blue);
+    fill: var(--med-blue);
 }
 
 footer li:nth-child(1) {

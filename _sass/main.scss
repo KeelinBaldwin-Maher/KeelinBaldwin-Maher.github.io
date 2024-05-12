@@ -1,10 +1,11 @@
 :root {
-    --highlight-blue: #123CFF;
+    --highlight-blue: hsl(229, 100%, 54%);
     --highlight-yellow: #FFDB22;
     --highlight-magenta: #FF2E8C;
 
-    --light-blue: hsl(209, 100%, 76%);
-    --light-magenta: #FFBDDB;
+    --med-blue: hsl(229, 90%, 74%);
+    --light-blue: hsl(209, 100%, 85%);
+    --light-magenta: hwb(333 74% 0%);
 
     --dark-blue: #062E53;
     --dark-magenta: #6F143D;
