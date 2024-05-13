@@ -1,11 +1,12 @@
 :root {
-    --highlight-blue: hsl(229, 100%, 54%);
-    --highlight-yellow: #FFDB22;
-    --highlight-magenta: hsl(333, 80%, 59%);
+    --highlight-blue: #0533ff;
+    --highlight-yellow: hsl(50, 100%, 57%);
+    --highlight-magenta: hsl(333, 80%, 49%);
 
+    --med-magenta: hsl(333, 80%, 67%);
     --med-blue: hsl(229, 90%, 74%);
     --light-blue: hsl(209, 100%, 85%);
-    --light-magenta: hsl(333, 100%, 87%);
+    --light-magenta: hsl(333, 100%, 90%);
 
     --dark-blue: #062E53;
     --dark-magenta: #6F143D;
@@ -19,6 +20,7 @@
     --font-family-heading: var(--font-primary);
     --font-family-heading-special: var(--font-display);
 
+    --font-weight-light: 300;
     --font-weight-regular: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;

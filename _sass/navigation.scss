@@ -9,6 +9,7 @@ nav li,
 footer li {
     display: flex;
     height: 100%;
+    overflow: hidden;
 }
 
 nav a,
@@ -17,38 +18,14 @@ footer a {
     color: black;
     font-weight: var(--font-weight-medium);
     width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-nav li.socials, 
-footer li.socials {
-    height: fit-content;
-}
-
-nav li.socials svg,
-footer li.socials svg {
-    fill: black;
-    height: var(--size-175);
-    width: var(--size-175);
-}
-
-// Nav Bar
-nav {
-    padding: var(--size-050) 0;
-    border-bottom: var(--border-200);
-    background-color: white;
-    width: 100%;
-    position: fixed;
 }
 
 li.socials a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: var(--size-200);
-    height: var(--size-200);
     overflow: hidden;
 }
 
@@ -57,35 +34,48 @@ li.socials a + a {
     margin-left: 24px;
 }
 
+li.socials svg {
+    fill: black;
+    height: var(--size-175);
+    width: var(--size-175);
+}
+
+// Nav Bar
+nav {
+    border-bottom: var(--border-200);
+    background-color: white;
+    width: 100%;
+    position: fixed;
+}
+
+nav li.logo {
+    grid-column: span 1;
+}
+
+nav li.logo a {
+    font-size: 1.5rem;
+    justify-content: flex-start;
+}
+
 nav li {
     grid-column: span 2;
 }
 
-nav li:nth-child(n + 2):nth-child(-n + 4) {
-    background-color: white;
-    border-radius: 1em;
-    transition: background-color ease 0.2s;
+nav li:nth-child(n + 2):nth-child(-n + 4) a {
+    padding: var(--size-100) var(--size-075);
+    transition: color ease 0.15s, font-weight ease 0.15s ,background-color ease 0.15s;
 }
 
-nav li:hover:nth-child(n + 2):nth-child(-n + 4) {
-    background-color: var(--light-blue);
-    transition: background-color ease 0.1s;
+nav li:hover:nth-child(n + 2):nth-child(-n + 4) a {
+    background-color: black;
+    color: var(--highlight-yellow);
+    font-weight: var(--font-weight-medium);
+    transition: color ease 0.1s, font-weight ease 0.1s, background-color ease 0.1s;
 }
 
-nav li:active:nth-child(n + 2):nth-child(-n + 4) {
-    background-color: var(--med-blue);
-}
-
-nav li.logo {
-    grid-column: 1 / span 1;
-    justify-self: start;
-}
-
-nav li.logo a {
-    display: block;
-    font-size: 1.5rem;
-    width: var(--font-size-header-1);
-    height: var(--font-size-header-1);
+nav li:active:nth-child(n + 2):nth-child(-n + 4) a {
+    background-color: hsl(0, 0%, 10%);
+    font-weight: var(--font-weight-thin);
 }
 
 nav li.socials {
@@ -93,9 +83,23 @@ nav li.socials {
     justify-content: flex-end;
 }
 
+nav li.socials a svg {
+    transition: fill ease 0.17s, transform ease 0.17s;
+}
+
+nav li.socials a:hover svg {
+    fill: var(--highlight-magenta);
+    transform: scale(1.05);
+    transition: fill ease 0.1s, transform ease 0.1s;
+}
+
+nav li.socials a:active svg {
+    fill: var(--med-magenta);
+}
+
 // Footer
 footer {
-    margin-top: var(--size-500);
+    margin-top: var(--size-800);
 }
 
 footer ul.grid-9-column {
@@ -104,15 +108,20 @@ footer ul.grid-9-column {
 
 footer li:nth-child(-n + 3) a,
 footer li.socials a svg {
-    color: black;
-    transition: color ease 0.2s, fill ease 0.2s;
+    transition: color ease 0.15s, font-weight ease 0.15s, fill ease 0.15s, transform ease 0.15s;
 }
 
 footer li:hover:nth-child(-n + 3) a,
-footer li.socials a:hover svg{
-    fill: var(--highlight-blue);
+footer li.socials a:hover svg {
     color: var(--highlight-blue);
-    transition: color ease 0.2s, fill ease 0.2s;
+    font-weight: var(--font-weight-bold);
+    transition: color ease 0.1s, font-weight ease 0.1s;
+}
+
+footer li.socials a:hover svg {
+    fill: var(--highlight-blue);
+    transform: scale(1.05);
+    transition: fill ease 0.1s, transform ease 0.1s;
 }
 
 footer li:active:nth-child(-n + 3) a,
@@ -123,14 +132,14 @@ footer li.socials a:active svg {
 
 footer li:nth-child(1) {
     grid-column: 4 / 5;
-    border-right: var(--border-100);
     padding-right: var(--size-050);
+    border-right: var(--border-100);
 }
 
 footer li:nth-child(3) {
     grid-column: 6 / 7;
-    border-left: var(--border-100);
     padding-left: var(--size-050);
+    border-left: var(--border-100);
 }
 
 footer li.socials {
