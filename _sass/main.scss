@@ -1,11 +1,11 @@
 :root {
     --highlight-blue: hsl(229, 100%, 54%);
     --highlight-yellow: #FFDB22;
-    --highlight-magenta: #FF2E8C;
+    --highlight-magenta: hsl(333, 80%, 59%);
 
     --med-blue: hsl(229, 90%, 74%);
     --light-blue: hsl(209, 100%, 85%);
-    --light-magenta: hwb(333 74% 0%);
+    --light-magenta: hsl(333, 100%, 87%);
 
     --dark-blue: #062E53;
     --dark-magenta: #6F143D;
@@ -28,12 +28,12 @@
     --font-size-header-1: 2.5rem;
     --font-size-header-2: 1.65rem;
     --font-size-header-3: 1.25rem;
-    --font-size-header-4: 1.05rem;
+    --font-size-header-4: 1.02rem;
 
-    --border-300: 3px solid black;
-    --border-200: 2px solid black;
     --border-100: 1px solid black;
-
+    --border-200: 2px solid black;
+    --border-300: 3px solid black;
+    
     --size-010: 0.1rem;
     --size-025: 0.25rem;
     --size-050: 0.5rem;
@@ -63,8 +63,8 @@ body {
 .button {
     cursor: pointer;
     text-decoration: none;
-    line-height: 1;
-    padding: var(--size-050);
+    line-height: 0;
+    padding: var(--size-100);
     width: fit-content;
 }
 
@@ -189,5 +189,4 @@ body {
 
     display: grid;
     grid-template-columns: repeat(9, minmax(auto, 1fr));
-    gap: 1rem;
 }

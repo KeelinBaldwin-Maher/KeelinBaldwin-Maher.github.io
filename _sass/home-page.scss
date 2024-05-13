@@ -85,6 +85,7 @@
     margin-top: var(--size-500);
     scroll-margin-top: var(--size-500);
     align-items: start;
+    gap: var(--size-125);
 }
 
 .contact-section .font-header-2 {
@@ -149,6 +150,7 @@
 
 .contact-form-inner-container #email {
     grid-area: email-i;
+    border-right: var(--border-100);
 }
 
 .contact-form-inner-container label[for="subject"] {
@@ -157,6 +159,7 @@
 
 .contact-form-inner-container #subject {
     grid-area: subject-i;
+    border-right: var(--border-100);
 }
 
 .contact-form-inner-container label[for="message"] {
