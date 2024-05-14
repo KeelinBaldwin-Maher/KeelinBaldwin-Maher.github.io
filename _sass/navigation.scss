@@ -63,19 +63,17 @@ nav li {
 
 nav li:nth-child(n + 2):nth-child(-n + 4) a {
     padding: var(--size-100) var(--size-075);
-    transition: color ease 0.15s, font-weight ease 0.15s ,background-color ease 0.15s;
+    transition: color ease 0.15s, font-weight ease 0.15s;
 }
 
 nav li:hover:nth-child(n + 2):nth-child(-n + 4) a {
-    background-color: black;
-    color: var(--highlight-yellow);
-    font-weight: var(--font-weight-medium);
+    color: var(--highlight-magenta);
+    font-weight: var(--font-weight-bold);
     transition: color ease 0.1s, font-weight ease 0.1s, background-color ease 0.1s;
 }
 
 nav li:active:nth-child(n + 2):nth-child(-n + 4) a {
-    background-color: hsl(0, 0%, 10%);
-    font-weight: var(--font-weight-thin);
+    color: var(--med-magenta);
 }
 
 nav li.socials {

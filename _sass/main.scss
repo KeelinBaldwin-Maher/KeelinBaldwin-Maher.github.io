@@ -177,12 +177,25 @@ body {
     --min-width: calc((100% - (var(--padding) * 2)) / 2);
 
     display: grid;
-    grid-template-columns: [main-start] minmax(var(--padding), 1fr) [content-start] min(var(--max-width), var(--min-width)) min(var(--max-width), var(--min-width)) [content-end] minmax(var(--padding), 1fr) [main-end];
+    grid-template-columns: 
+        [full-start] minmax(var(--padding), 1fr) 
+        [content-start] min(var(--max-width), var(--min-width)) min(var(--max-width), 
+        var(--min-width)) 
+        [content-end] 
+        minmax(var(--padding), 1fr) [full-end];
 }
 
 /* selector > * - selects all direct children of selector */
-.content-grid>* {
+.content-grid > *,
+.full-width > *{
     grid-column: content;
+}
+
+.content-grid > .full-width {
+    grid-column: full;
+
+    display: grid;
+    grid-template-columns: inherit;
 }
 
 .grid-9-column {
