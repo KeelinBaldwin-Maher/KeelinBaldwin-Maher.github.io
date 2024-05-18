@@ -9,7 +9,7 @@ nav li,
 footer li {
     display: flex;
     height: 100%;
-    overflow: hidden;
+    //overflow: hidden;
 }
 
 nav a,
@@ -61,19 +61,23 @@ nav li {
     grid-column: span 2;
 }
 
-nav li:nth-child(n + 2):nth-child(-n + 4) a {
+nav .menu-link {
     padding: var(--size-100) var(--size-075);
     transition: color ease 0.15s, font-weight ease 0.15s;
 }
 
-nav li:hover:nth-child(n + 2):nth-child(-n + 4) a {
+nav .menu-link:hover {
     color: var(--highlight-magenta);
     font-weight: var(--font-weight-bold);
     transition: color ease 0.1s, font-weight ease 0.1s, background-color ease 0.1s;
 }
 
-nav li:active:nth-child(n + 2):nth-child(-n + 4) a {
+nav .menu-link:active {
     color: var(--med-magenta);
+}
+
+nav .menu-link.active {
+    color: blue;
 }
 
 nav li.socials {

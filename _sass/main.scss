@@ -51,6 +51,7 @@
     --size-500: 5rem;
     --size-600: 6rem;
     --size-800: 8rem;
+    --size-900: 9rem;
 }
 
 body {
@@ -203,5 +204,5 @@ body {
     --min-width: calc(100% - (var(--size-125) * 2));
 
     display: grid;
-    grid-template-columns: repeat(9, minmax(auto, 1fr));
+    grid-template-columns: repeat(9, minmax(0 , 1fr));
 }
