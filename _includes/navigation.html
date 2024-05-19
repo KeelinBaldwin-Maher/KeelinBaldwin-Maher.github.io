@@ -1,7 +1,7 @@
 <nav class="content-grid">
     <ul class="grid-9-column">
         <li class="logo">
-            <a href="/" target="_parent">
+            <a href="/" data-name="welcome-section">
                 &#128640;
                 <span class="visually-hidden">Home</span>
             </a>
@@ -9,7 +9,7 @@
 
         {% for link in site.data.nav.pages %}
             <li>
-                <a href="{{ link.url }}" class="menu-link">
+                <a href="{{ link.url }}" class="menu-link" data-name="{{ link.name | downcase }}">
                     {{ link.name }}
                 </a>
             </li>

@@ -1,58 +1,63 @@
-const navLinks = document.querySelectorAll("nav .menu-link");
 
-navLinks.forEach(link => link.addEventListener("click", navigation));
+// https://andrewwalpole.com/blog/the-showy-hidey-nav-bar/
+function navScroll() {
+    let prevScrollPos = 0;
+    const navBar = document.querySelector("nav");
 
-function navigation({ target }) {
-    const currentActiveLink = document.querySelector("nav .active");
-    (currentActiveLink) ? currentActiveLink.classList.remove("active") : "";
-    target.classList.add("active");
+    function toggleNav() {
+        const st = document.documentElement.scrollTop;
+        if (st > prevScrollPos && st > navBar.clientHeight) {
+            navBar.style.top = "-100%";
+        } else if (st < prevScrollPos) {
+            navBar.style.top = "0";
+        }
+        prevScrollPos = st <= 0 ? 0 : st;
+    }
+    
+    if (navBar) {
+        window.removeEventListener("scroll", toggleNav);
+        window.addEventListener("scroll", toggleNav);
+    }
 }
-
 
 const sections = document.querySelectorAll("section");
 
-function isElementVisible(section) {
-    const sectionTop = section.offsetTop;
-    const sectionBottom = (section.offsetTop + section.offsetHeight);
-    const viewportTop = window.scrollY;
-    const viewportBottom = window.innerHeight + viewportTop;
-    return viewportTop < sectionTop && viewportBottom > sectionBottom;
+function activeSection() {
+    const windowHeight = window.innerHeight;
+
+    const visibleSections = [];
+
+    for (let i = 0; i < sections.length; i++) {
+        const sectionRect = sections[i].getBoundingClientRect();
+
+        const heightPercentage = Math.floor((sectionRect.bottom / windowHeight) * 100);
+
+        if (sectionRect.top < windowHeight && heightPercentage > 10) {
+            visibleSections.push(sections[i]);
+        }
+    }
+
+    const activeSection = visibleSections[0];
+
+    const currentActiveLink = document.querySelector("nav .active");
+    (document.querySelector("nav .active")) ? currentActiveLink.classList.remove("active") : "";
+
+    // Make sure nav bar is on top 
+    document.querySelector("nav").style.top = "0";
+
+    document.querySelector(`nav a[data-name="${activeSection.id}"]`).classList.add("active");
 }
 
-// window.addEventListener('scroll', () => { 
-//     sections.forEach((section, i) => { 
-//         isElementVisible(section) ?  navLinks[i] : ""
-//     });
-// }); 
+window.addEventListener('scroll', activeSection);
 
-// function activeSection() {
-//     sections.forEach((section) => {
-//         console.log(section);
-//         console.log(isElementVisible(section));
-//     });
+// function onScroll() {
+//     navScroll();
+//     activeSection();
 // }
 
-console.log("Window height: " + window.innerHeight);
-let activeSection = "";
+navScroll();
+activeSection();
 
-const windowHeight = window.innerHeight;
-
-for (let i = 0; i < sections.length; i++) {
-    const sectionRect = sections[i].getBoundingClientRect();
-
-    if (sectionRect.bottom < windowHeight && sectionRect.bottom !== 0
-        && (sectionRect.bottom / windowHeight) > 0.1) {
-        activeSection = sections[i];
-    } 
-
-    const sectionTop = sectionRect.top > 0 && sectionRect.top < windowHeight 
-        ? sectionRect.top : sectionRect.top > windowHeight ? windowHeight : 0;
-
-    const sectionBottom = sectionRect.bottom > 0 && sectionRect.bottom < windowHeight 
-        ? sectionRect.bottom : sectionRect.bottom > windowHeight ? windowHeight : 0;
-    
-    
-    console.log(sections[i].id + " top: " + sectionTop);
-    console.log(sections[i].id + " bottom: " + sectionBottom);
-}
-console.log(activeSection.id);
+//const navBar = document.querySelector("nav");
+// console.log(navBar.clientHeight);
+// console.log(parseInt(getComputedStyle(navBar).getPropertyValue("--nav-height")));
