@@ -53,8 +53,17 @@ nav {
     width: 100%;
     position: fixed;
     top: 0;
+    z-index: 10;
+}
 
-    transition: top 0.5s;
+.show {
+    transform: translateY(--nav-height);
+    transition: transform 0.2s;
+}
+
+.hide {
+    transform: translateY(calc(100% * -1));
+    transition: transform 0.3s;
 }
 
 nav li.logo {

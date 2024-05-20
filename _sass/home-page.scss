@@ -43,6 +43,8 @@
     border: var(--border-300);
     margin-bottom: var(--size-400);
     gap: 0;
+    overflow: hidden;
+    background-color: #FFF;
 }
 
 .project-section :last-child {
@@ -77,7 +79,7 @@
 .project-card .button {
     grid-column: 5 / -1;
     grid-row: 2;
-    margin: var(--size-050) var(--size-100) var(--size-125);
+    margin: var(--size-075) var(--size-100) var(--size-125);
 }
 
 /* Contact Section*/
@@ -109,6 +111,7 @@
 }
 
 .contact-form-inner-container {
+    overflow: hidden;
     border: var(--border-300);
     margin-bottom: var(--size-125);
     display: grid;

@@ -3,21 +3,28 @@ const navBar = document.querySelector("nav");
 
 const sections = document.querySelectorAll("section");
 
-const section1Bottom = (sections[0]) ? sections[0].offsetHeight + sections[0].offsetTop : 0;
-const section2Bottom = (sections[1]) ? (sections[1].offsetHeight + sections[1].offsetTop) - 1 : 0;
+// const section1Bottom = (sections[0]) ? sections[0].offsetHeight + sections[0].offsetTop : 0;
+// const section2Bottom = (sections[1]) ? sections[1].offsetHeight + sections[1].offsetTop : 0;
 
 let prevScrollPos = 0;
 // https://andrewwalpole.com/blog/the-showy-hidey-nav-bar/
 function toggleNav() {
     const st = document.documentElement.scrollTop;
 
+    const section1Bottom = (sections[0]) ? sections[0].offsetHeight + sections[0].offsetTop : 0;
+    const section2Bottom = (sections[1]) ? sections[1].offsetHeight + sections[1].offsetTop : 0;
     console.log(prevScrollPos);
 
     if (st > prevScrollPos && st > navBar.clientHeight && 
-        prevScrollPos !== 0 && prevScrollPos !== section1Bottom && prevScrollPos !== section2Bottom ) {
-        navBar.style.top = "-100%";
+        prevScrollPos !== 0 && prevScrollPos !== section1Bottom && 
+        prevScrollPos !== (section2Bottom - 1)) {
+        // navBar.style.top = "-100%";
+        navBar.classList.remove("show");
+        navBar.classList.add("hide");
     } else if (st < prevScrollPos) {
-        navBar.style.top = "0";
+        // navBar.style.top = "0%";
+        navBar.classList.remove("hide");
+        navBar.classList.add("show");
     }
     prevScrollPos = st;
 }
