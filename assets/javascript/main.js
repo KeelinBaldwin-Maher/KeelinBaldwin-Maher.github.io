@@ -1,26 +1,27 @@
 
-// https://andrewwalpole.com/blog/the-showy-hidey-nav-bar/
-function navScroll() {
-    let prevScrollPos = 0;
-    const navBar = document.querySelector("nav");
-
-    function toggleNav() {
-        const st = document.documentElement.scrollTop;
-        if (st > prevScrollPos && st > navBar.clientHeight) {
-            navBar.style.top = "-100%";
-        } else if (st < prevScrollPos) {
-            navBar.style.top = "0";
-        }
-        prevScrollPos = st <= 0 ? 0 : st;
-    }
-    
-    if (navBar) {
-        window.removeEventListener("scroll", toggleNav);
-        window.addEventListener("scroll", toggleNav);
-    }
-}
+const navBar = document.querySelector("nav");
 
 const sections = document.querySelectorAll("section");
+
+const section1Bottom = (sections[0]) ? sections[0].offsetHeight + sections[0].offsetTop : 0;
+const section2Bottom = (sections[1]) ? (sections[1].offsetHeight + sections[1].offsetTop) - 1 : 0;
+
+let prevScrollPos = 0;
+// https://andrewwalpole.com/blog/the-showy-hidey-nav-bar/
+function toggleNav() {
+    const st = document.documentElement.scrollTop;
+
+    console.log(prevScrollPos);
+
+    if (st > prevScrollPos && st > navBar.clientHeight && 
+        prevScrollPos !== 0 && prevScrollPos !== section1Bottom && prevScrollPos !== section2Bottom ) {
+        navBar.style.top = "-100%";
+    } else if (st < prevScrollPos) {
+        navBar.style.top = "0";
+    }
+    prevScrollPos = st;
+}
+
 
 function activeSection() {
     const windowHeight = window.innerHeight;
@@ -42,22 +43,14 @@ function activeSection() {
     const currentActiveLink = document.querySelector("nav .active");
     (document.querySelector("nav .active")) ? currentActiveLink.classList.remove("active") : "";
 
-    // Make sure nav bar is on top 
-    document.querySelector("nav").style.top = "0";
-
     document.querySelector(`nav a[data-name="${activeSection.id}"]`).classList.add("active");
 }
 
-window.addEventListener('scroll', activeSection);
+window.addEventListener('scroll', onScroll);
 
-// function onScroll() {
-//     navScroll();
-//     activeSection();
-// }
+function onScroll() {
+    toggleNav();
+    activeSection();
+}
 
-navScroll();
 activeSection();
-
-//const navBar = document.querySelector("nav");
-// console.log(navBar.clientHeight);
-// console.log(parseInt(getComputedStyle(navBar).getPropertyValue("--nav-height")));
