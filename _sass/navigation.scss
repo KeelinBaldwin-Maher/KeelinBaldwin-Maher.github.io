@@ -16,7 +16,6 @@ footer li {
 nav a,
 footer a {
     text-decoration: none;
-    color: black;
     font-weight: var(--font-weight-medium);
     //width: 100%;
 
@@ -36,7 +35,6 @@ li.socials a + a {
 }
 
 li.socials svg {
-    fill: black;
     height: var(--size-175);
     width: var(--size-175);
 }
@@ -82,6 +80,7 @@ nav li {
 }
 
 nav .menu-link {
+    color: black;
     padding: var(--size-100) var(--size-075);
     transition: color ease 0.15s, font-weight ease 0.15s;
 }
@@ -100,6 +99,7 @@ nav .menu-link::before {
     content: "";
     z-index: -1;
     background-color: var(--light-magenta);
+    border-radius: 8px;
     height: var(--size-250);
     width: 0;
     position: absolute;
@@ -136,51 +136,55 @@ nav li.socials a:active svg {
 // Footer
 footer {
     margin-top: var(--size-800);
+    padding-top: var(--size-175);
 }
 
 footer ul.grid-9-column {
     gap: var(--size-050);
+    
 }
 
 footer .menu-link,
 footer li.socials a svg {
+    color: white;
+    fill: white;
     transition: color ease 0.15s, font-weight ease 0.15s, fill ease 0.15s, transform ease 0.15s;
 }
 
 footer .menu-link:hover,
 footer li.socials a:hover svg {
-    color: var(--highlight-blue);
+    color: var(--highlight-yellow);
     font-weight: var(--font-weight-bold);
     transition: color ease 0.1s, font-weight ease 0.1s;
 }
 
 footer li.socials a:hover svg {
-    fill: var(--highlight-blue);
+    fill: var(--highlight-yellow);
     transform: scale(1.05);
     transition: fill ease 0.1s, transform ease 0.1s;
 }
 
 footer .menu-link:active,
 footer li.socials a:active svg {
-    color: var(--med-blue);
-    fill: var(--med-blue);
+    color: var(--dark-yellow);
+    fill: var(--dark-yellow);
 }
 
 footer li:nth-child(1) {
     grid-column: 4 / 5;
     padding-right: var(--size-050);
-    border-right: var(--border-100);
+    border-right: var(--border-100-white);
 }
 
 footer li:nth-child(3) {
     grid-column: 6 / 7;
     padding-left: var(--size-050);
-    border-left: var(--border-100);
+    border-left: var(--border-100-white);
 }
 
 footer li.socials {
     grid-row: 2;
     grid-column: 3 / 8;
     padding: var(--size-050) 0 var(--size-125) 0;
-    border-top: var(--border-100);
+    border-top: var(--border-100-white);
 }
