@@ -29,7 +29,7 @@ li.socials a {
     overflow: hidden;
 }
 
-li.socials a + a {
+li.socials a+a {
     /* Only affects <a> elements that have an <a> element preceding it */
     margin-left: 24px;
 }
@@ -136,55 +136,67 @@ nav li.socials a:active svg {
 // Footer
 footer {
     margin-top: var(--size-800);
-    padding-top: var(--size-175);
 }
 
-footer ul.grid-9-column {
-    gap: var(--size-050);
-    
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    padding: var(--size-175) 0 var(--size-075) 0;
 }
 
-footer .menu-link,
-footer li.socials a svg {
+.footer-nav li {
+    max-width: 7rem;
+    overflow: hidden;
+    flex: 1 30%;
+    padding: 0 var(--size-100);
+}
+
+.footer-nav li:nth-child(2) {
+    border-right: var(--border-100-white);
+    border-left: var(--border-100-white);
+}
+
+.footer-nav .menu-link {
     color: white;
-    fill: white;
-    transition: color ease 0.15s, font-weight ease 0.15s, fill ease 0.15s, transform ease 0.15s;
+    transition: color ease 0.15s, font-weight ease 0.15s, transform ease 0.15s;
 }
 
-footer .menu-link:hover,
-footer li.socials a:hover svg {
+.footer-nav .menu-link:active {
+    color: var(--dark-yellow);
+}
+
+.footer-nav .menu-link:hover {
     color: var(--highlight-yellow);
     font-weight: var(--font-weight-bold);
     transition: color ease 0.1s, font-weight ease 0.1s;
 }
 
-footer li.socials a:hover svg {
+.footer-socials {
+    max-width: 70%;
+    min-width: 310px;
+    margin: 0 auto;
+}
+
+.footer-socials li.socials {
+    padding: var(--size-075) 0 var(--size-125) 0;
+    border-top: var(--border-100-white);
+    fill: white;
+    transition: fill ease 0.15s, transform ease 0.15s;
+}
+
+.footer-socials a:hover svg {
     fill: var(--highlight-yellow);
     transform: scale(1.05);
     transition: fill ease 0.1s, transform ease 0.1s;
 }
 
-footer .menu-link:active,
-footer li.socials a:active svg {
-    color: var(--dark-yellow);
+.footer-socials a:active svg {
     fill: var(--dark-yellow);
 }
 
-footer li:nth-child(1) {
-    grid-column: 4 / 5;
-    padding-right: var(--size-050);
-    border-right: var(--border-100-white);
-}
-
-footer li:nth-child(3) {
-    grid-column: 6 / 7;
-    padding-left: var(--size-050);
-    border-left: var(--border-100-white);
-}
-
-footer li.socials {
-    grid-row: 2;
-    grid-column: 3 / 8;
-    padding: var(--size-050) 0 var(--size-125) 0;
-    border-top: var(--border-100-white);
+@media screen and (max-width: 20em) {
+    .footer-nav .menu-link:hover {
+        font-weight: var(--font-weight-medium);
+        transform: scale(1.05);
+    }
 }

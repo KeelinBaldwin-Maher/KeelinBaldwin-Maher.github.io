@@ -1,18 +1,22 @@
 <footer class="content-grid bkg-dark-blue">
-    <ul class="grid-9-column">
-        {% for link in site.data.nav.pages %}
+    <ul>
+        <div class="footer-nav">
+            {% for link in site.data.nav.pages %}
             <li>
                 <a href="{{ link.url }}" target="_self" class="menu-link">{{ link.name }}</a>
             </li>
-        {% endfor %}
+            {% endfor %}
+        </div>
 
-        <li class="socials" aria-label="Social Media">
-            {% for link in site.data.nav.social-media %}
+        <div class="footer-socials">
+            <li class="socials" aria-label="Social Media">
+                {% for link in site.data.nav.social-media %}
                 <a href="{{ link.url }}" target="_self">
                     <span class="visually-hidden">{{ link.name }}</span>
                     {{ link.svg }}
                 </a>
-            {% endfor %}
-        </li>
+                {% endfor %}
+            </li>
+        </div>
     </ul>
 </footer>

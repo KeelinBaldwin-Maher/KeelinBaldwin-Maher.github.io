@@ -1,19 +1,20 @@
 
 const navBar = document.querySelector("nav");
 
-const sections = document.querySelectorAll("section");
-
 let prevScrollPos = 0;
 // https://andrewwalpole.com/blog/the-showy-hidey-nav-bar/
 function toggleNav() {
+    const sections = document.querySelectorAll("section");
+
     const st = document.documentElement.scrollTop;
 
-    const section1Bottom = (sections[0]) ? sections[0].offsetHeight + sections[0].offsetTop : 0;
-    const section2Bottom = (sections[1]) ? sections[1].offsetHeight + sections[1].offsetTop : 0;
+    const section2Top = (sections[1]) ? sections[1].offsetTop : 0;
+    const section3Top = (sections[2]) ? sections[2].offsetTop : 0;
 
     if (st > prevScrollPos && st > navBar.clientHeight && 
-        prevScrollPos !== 0 && prevScrollPos !== section1Bottom && 
-        prevScrollPos !== (section2Bottom - 1)) {
+        prevScrollPos !== 0 && 
+        !(st < (section2Top + 100) && st > section2Top) && 
+        st !== section3Top) {
         navBar.classList.remove("show");
         navBar.classList.add("hide");
 
@@ -26,6 +27,8 @@ function toggleNav() {
 
 
 function activeSection() {
+    const sections = document.querySelectorAll("section");
+
     const windowHeight = window.innerHeight;
 
     const visibleSections = [];
@@ -43,10 +46,13 @@ function activeSection() {
     const activeSection = visibleSections[0];
 
     const currentActiveLink = document.querySelector("nav .active");
-    (document.querySelector("nav .active")) ? currentActiveLink.classList.remove("active") : "";
+    
+    (currentActiveLink) ? currentActiveLink.classList.remove("active") : "";
 
     document.querySelector(`nav a[data-name="${activeSection.id}"]`).classList.add("active");
 }
+
+activeSection();
 
 window.addEventListener('scroll', onScroll);
 
@@ -54,5 +60,3 @@ function onScroll() {
     toggleNav();
     activeSection();
 }
-
-activeSection();
