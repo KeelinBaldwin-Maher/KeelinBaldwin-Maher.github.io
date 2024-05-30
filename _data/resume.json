@@ -2,6 +2,7 @@
   "experience": 
     [
     {
+      "title": "Job Title",
       "company": "Company Name",
       "location": "Calgary, AB",
       "dates": "00/0000 - 00/0000",
@@ -12,6 +13,7 @@
       ]
     },
     {
+      "title": "Job Title",
       "company": "Company Name",
       "location": "Calgary, AB",
       "dates": "00/0000 - 00/0000",
@@ -22,6 +24,7 @@
       ]
     },
     {
+      "title": "Job Title",
       "company": "Company Name",
       "location": "Calgary, AB",
       "dates": "00/0000 - 00/0000",
@@ -47,6 +50,6 @@
     }
   ],
   "skills": [
-    "One", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"
+    "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"
   ]
 }

@@ -12,9 +12,10 @@ function toggleNav() {
     const section3Top = (sections[2]) ? sections[2].offsetTop : 0;
 
     if (st > prevScrollPos && st > navBar.clientHeight && 
-        prevScrollPos !== 0 && 
-        !(st < (section2Top + 100) && st > section2Top) && 
+        !(st > (section2Top - 100) && st < section2Top) && 
         st !== section3Top) {
+        console.log(st);
+        console.log(section2Top);
         navBar.classList.remove("show");
         navBar.classList.add("hide");
 

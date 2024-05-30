@@ -30,7 +30,6 @@
 
 /* Projects Section*/
 .project-section {
-    // margin: var(--size-300) 0;
     scroll-margin-top: var(--size-350);
     padding: var(--size-400) 0 var(--size-450) 0;
 }
@@ -84,8 +83,6 @@
 
 /* Contact Section*/
 .contact-section {
-    // margin-top: var(--size-300);
-    // scroll-margin-top: var(--size-500);
     padding: var(--size-700) 0;
     align-items: start;
     gap: var(--size-125);
@@ -111,7 +108,6 @@
 }
 
 .contact-form-inner-container {
-    overflow: hidden;
     border: var(--border-300);
     margin-bottom: var(--size-125);
     display: grid;
@@ -121,40 +117,53 @@
         "subject    subject-i  subject-i  subject-i  subject-i  subject-i"
         "message    message    message    message    message    message"
         "message-i  message-i  message-i  message-i  message-i  message-i";
-    align-items: center;
+}
+
+
+.contact-form-inner-container :focus {
+    outline: var(--highlight-blue) 2px solid;
+    box-shadow: 0px 0px 0px 3.5px hsla(333, 80%, 49%, 25%);
+    z-index: 2;
 }
 
 .contact-form-inner-container label {
     font-family: var(--font-family-mono);
-    text-align: end;
     background-color: var(--light-blue);
     padding: var(--size-050);
-    border: var(--border-100);
-    border-top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    border: none;
+    border-bottom: var(--border-100);
 }
 
 .contact-form-inner-container input {
     padding: var(--size-050);
     height: 100%;
     border: none;
-    border-bottom: var(--border-100);
+    border-bottom: var(--border-100); 
 }
 
 .contact-form-inner-container label[for="name"] {
     grid-area: name;
+    border-radius: 5px 0 0 0;
 }
 
 .contact-form-inner-container #name {
     grid-area: name-i;
+    border: var(--border-100);
+    border-top: none;
 }
 
 .contact-form-inner-container label[for="email"] {
     grid-area: email;
+    border-right: var(--border-100);
 }
 
 .contact-form-inner-container #email {
     grid-area: email-i;
-    border-right: var(--border-100);
+    border-radius: 0 5px 0 0;
 }
 
 .contact-form-inner-container label[for="subject"] {
@@ -163,22 +172,21 @@
 
 .contact-form-inner-container #subject {
     grid-area: subject-i;
-    border-right: var(--border-100);
+    border-left: var(--border-100);
 }
 
 .contact-form-inner-container label[for="message"] {
-    text-align: center;
+    justify-content: center;
     grid-area: message;
+    border-bottom: var(--border-100);
 }
 
 .contact-form-inner-container #message {
     grid-area: message-i;
     padding: var(--size-050) var(--size-125);
     min-height: calc(var(--font-size-body) * 30);
-    resize: none;
     border: none;
-    border-right: var(--border-100);
-    border-left: var(--border-100);
+    border-radius: 0 0 5px 5px;
 }
 
 .contact-form input[type="submit"] {

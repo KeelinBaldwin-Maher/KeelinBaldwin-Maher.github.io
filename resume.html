@@ -9,9 +9,9 @@ title: Keelin's Resume
         <h2 class="font-header-2">Experience</h2>
         {% for experience in site.data.resume.experience %}
            <article class="company  grid-9-column">
-                <h3 class="company-name font-header-3">{{ experience.company }}</h3>
-                <p class="company-location font-header-4">{{ experience.location }}</p>
-                <p class="company-dates font-header-4">{{ experience.dates }}</p>
+                <h3 class="company-title font-header-3">{{ experience.title }}</h3>
+                <p class="company-name font-bold">{{ experience.company }}</p>
+                <p class="company-dates font-mono">{{ experience.dates }}</p>
                 <ul class="company-experience-description">
                     {% for description in experience.descriptions %}
                         <li>{{ description }}</li>
@@ -25,9 +25,8 @@ title: Keelin's Resume
         {% for school in site.data.resume.education%}
             <article class="school grid-9-column">
                 <h3 class="school-degree font-header-3">{{ school.degree }}</h3>
-                <p class="school-name">{{ school.school }}</p>
-                
-                <p class="school-dates font-header-4">{{ school.dates }}</p>
+                <p class="school-name font-bold">{{ school.school }}</p>
+                <p class="school-dates font-mono">{{ school.dates }}</p>
             </article>
         {% endfor %}
     </article>
@@ -35,7 +34,7 @@ title: Keelin's Resume
         <h2 class="font-header-2 bkg-light-blue">Skills</h2>
         <div class="skills-container">
             {% for skill in site.data.resume.skills %}
-                <p class="skill bkg-light-blue">{{ skill }}</p>
+                <p class="skill bkg-light-blue font-mono">{{ skill }}</p>
             {% endfor %}
         </div>
    </article>

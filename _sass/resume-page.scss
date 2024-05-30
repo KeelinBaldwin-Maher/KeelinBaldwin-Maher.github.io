@@ -7,6 +7,10 @@
     margin-bottom: var(--size-150);
 }
 
+.resume-section .font-header-3 {
+    font-size: 1.12rem;
+}
+
 .experience >* ,
 .education > * {
     border: var(--border-100);
@@ -16,56 +20,58 @@
 .experience .font-header-2, 
 .education .font-header-2,
 .skills .font-header-2 {
-    padding: var(--size-125) var(--size-100);
+    padding: var(--size-175) var(--size-125) var(--size-125) var(--size-125);
 }
 
 .company.grid-9-column {
     gap: 0rem;
     grid-template-areas:
-        "c c c de de de de de de"
-        "l l l de de de de de de"
-        "d d d de de de de de de";
+        "t t t e e e e e e"
+        "n n n e e e e e e"
+        "d d d e e e e e e";
 }
 
 .company > * {
-    padding: var(--size-100);
+    padding: var(--size-125);
     border-bottom: var(--border-100);
 }
 
-.company-name {
-    grid-area: c;
-    padding-bottom: var(--size-400);
+.company-title {
+    grid-area: t;
+    border-right: var(--border-100);
 }
 
-.company-location {
-    grid-area: l;
+.company-name {
+    grid-area: n;
+    border-right: var(--border-100);
 }
 
 .company-dates {
     grid-area: d;
     border-bottom: 0;
+    border-right: var(--border-100);
 }
 
 .company-experience-description {
-    grid-area: de;
-    border-left: var(--border-100);
+    grid-area: e;
     border-bottom: 0;
+    padding-bottom: var(--size-300);
 }
 
 .company-experience-description li {
-    margin-left: var(--size-125);
+    margin-left: var(--size-100);
     margin-bottom: var(--size-075);
 }
 
 .school.grid-9-column {
     gap: 0;
-    grid-template-areas: 
-        "s s s s n n n d d";
+    grid-template-areas:
+        "s s s s s n n n n"
+        "s s s s s d d d d";
 }
 
 .school > * {
-    padding: var(--size-100);
-    border-right: var(--border-100);
+    padding: var(--size-125);
 }
 
 .school-degree {
@@ -74,11 +80,13 @@
 
 .school-name {
     grid-area: n;
+    border-left: var(--border-100);
+    border-bottom: var(--border-100);
 }
 
 .school-dates {
     grid-area: d;
-    border-right: 0;
+    border-left: var(--border-100);
 }
 
 .skills .font-header-2 {
@@ -87,11 +95,12 @@
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .skill {
     aspect-ratio: 1 / 1;
+    overflow: hidden;
     padding: var(--size-100);
 }
 
