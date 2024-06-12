@@ -1,30 +1,46 @@
-<nav class="content-grid">
-    <ul class="grid-9-column">
-        <li class="logo">
-            <a href="/" data-name="welcome-section">
-                &#128640;
-                <span class="visually-hidden">Home</span>
-            </a>
-        </li>
+<header class="content-grid">
+    <div class="mobile-nav-container full-width">
+        <div class="mobile-nav">
+            <div class="logo">
+                <a href="/" data-name="welcome-section">
+                    &#128640;
+                    <span class="visually-hidden">Home</span>
+                </a>
+            </div>
+            <button class="hamburger-menu" aria-controls="primary-navigation" aria-expanded="false">
+                <div class="hamburger-menu-icon" aria-hidden="true"><span></span><span></span><span></span></div>
+                <span class="visually-hidden">Menu</span>
+            </button>
+        </div>
+    </div>
+    <nav class="full-width" id="primary-navigation">
+        <ul class="grid-9-column">
 
-        {% for link in site.data.nav.pages %}
+            <li class="logo">
+                <a href="/" data-name="welcome-section">
+                    &#128640;
+                    <span class="visually-hidden">Home</span>
+                </a>
+            </li>
+
+            {% for link in site.data.nav.pages %}
             <li>
                 <a href="{{ link.url }}" class="menu-link" data-name="{{ link.name | downcase }}">
                     {{ link.name }}
                 </a>
             </li>
-        {% endfor %}
+            {% endfor %}
 
-        {{ page.link }}
+            {{ page.link }}
 
-        <li class="socials" aria-label="Social Media">
-            {% for link in site.data.nav.social-media %}
+            <li class="socials" aria-label="Social Media">
+                {% for link in site.data.nav.social-media %}
                 <a href="{{ link.url }}">
                     <span class="visually-hidden">{{ link.name }}</span>
                     {{ link.svg }}
                 </a>
-            {% endfor %}
-        </li>
-    </ul>
-</nav>
-
+                {% endfor %}
+            </li>
+        </ul>
+    </nav>
+</header>
