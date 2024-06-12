@@ -2,10 +2,9 @@ const navBar = document.querySelector("#primary-navigation");
 let prevScrollPos = 0;
 // https://andrewwalpole.com/blog/the-showy-hidey-nav-bar/
 function toggleNav() {
-    const sections = document.querySelectorAll("section");
-
     const st = document.documentElement.scrollTop;
 
+    const sections = document.querySelectorAll("section");
     const section2Top = (sections[1]) ? sections[1].offsetTop : 0;
     const section3Top = (sections[2]) ? sections[2].offsetTop : 0;
 
@@ -24,22 +23,22 @@ function toggleNav() {
 
 function activeSection() {
     const sections = document.querySelectorAll("section");
-
     const windowHeight = window.innerHeight;
 
-    const visibleSections = [];
+    let activeSection = ""
 
     for (let i = 0; i < sections.length; i++) {
+        // Get the dimensions of the section. 
         const sectionRect = sections[i].getBoundingClientRect();
+        
+        // The top and bottom attributes will be negative if they are not visible 
+        const visibilityPercent = Math.floor((sectionRect.bottom / windowHeight) * 100);
 
-        const heightPercentage = Math.floor((sectionRect.bottom / windowHeight) * 100);
-
-        if (sectionRect.top < windowHeight && heightPercentage > 10) {
-            visibleSections.push(sections[i]);
+        if (visibilityPercent > 15) { // The section is active when it's at least 15% visible
+            activeSection = sections[i];
+            i = sections.length;
         }
     }
-
-    const activeSection = visibleSections[0];
 
     // If there is a active link, then remove the 'active' style
     const currentActiveLink = document.querySelector("nav .active");
@@ -72,8 +71,8 @@ function handleMediaQueryWidth(event) {
         // Reset nav style
         const currentActiveLink = document.querySelector("nav .active");
         (currentActiveLink) ? currentActiveLink.classList.remove("active") : "";
-        // navBar.classList.remove("show");
-        // navBar.classList.add("hide");
+        navBar.classList.remove("show");
+        navBar.classList.remove("hide");
 
         window.removeEventListener('scroll', handleScroll);
     }
@@ -87,10 +86,13 @@ function handleHamburgerMenu() {
     if (hamburgerMenu.ariaExpanded === "true") {
         // Close menu
         hamburgerMenu.ariaExpanded = "false";
+        navBar.classList.remove("show");
+        navBar.classList.add("hide");
     } else {
         // Open menu
         hamburgerMenu.ariaExpanded = "true";
-
+        navBar.classList.remove("hide");
+        navBar.classList.add("show")
     }
 }
 
