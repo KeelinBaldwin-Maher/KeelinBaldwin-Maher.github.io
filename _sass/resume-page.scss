@@ -114,3 +114,55 @@
     border-right: var(--border-100);
     border-bottom: var(--border-100);
 }
+
+@media print {
+    :root {
+        font-size: 13px;
+    }
+
+    #resume .font-header-1,
+    .company.grid-9-column, .experience .font-header-2, .company, 
+    .company-experience-description, 
+    .school.grid-9-column, .education .font-header-2, .school-degree, .school-degree,
+    .skills, .skills .font-header-2{
+        display: flex;
+        flex-flow: row wrap;
+        padding: 0;
+        margin: 0;
+        flex: 1 100%;
+    }
+
+    .experience .font-header-2, .education .font-header-2, .skills .font-header-2 {
+        padding: var(--size-150) 0 var(--size-050) 0;
+    }
+
+    .company-title, .company-name, .company-dates, .school-name, .school-dates {
+        padding: 0;
+        flex: 1; 
+    }
+
+    .company-experience-description {
+        padding: var(--size-050) 0 var(--size-200) var(--size-100);
+    }
+
+    .school-degree {
+        padding: 0 0 var(--size-050) 0;
+    }
+
+    .school-name, .school-dates {
+        padding: 0 0 var(--size-175) 0;
+    }
+
+    .skills-container {
+        display: block;
+    }
+
+    .skill {
+        padding: 0 0 var(--size-050) 0;
+        aspect-ratio: auto;
+    }
+
+    header, nav, footer {
+        display: none !important;
+    }
+}
