@@ -37,14 +37,17 @@ li.socials svg {
     width: var(--size-175);
 }
 
-// Nav Bar
+
+/* Nav Bar */
+
+// General nav bar styles
 header {
     --nav-height: 4rem;
     min-height: var(--nav-height);
 }
 
 .show {
-    transform: translateY(--nav-height);
+    transform: translateY(0);
     transition: transform 0.2s;
 }
 
@@ -53,6 +56,7 @@ header {
     transition: transform 0.3s;
 }
 
+// Mobile nav styles
 .full-width.mobile-nav-container {
     display: none;
     position: fixed;
@@ -60,7 +64,6 @@ header {
     width: 100%;
     background-color: white;
     z-index: 100;
-    border-bottom: var(--border-200);
 }
 
 .mobile-nav {
@@ -70,13 +73,23 @@ header {
 }
 
 .hamburger-menu {
-    width: var(--size-225);
-    height: var(--size-225);
+    width: 32px;
+    height: 32px;
     z-index: 90;
     cursor: pointer;
-    // background-color: rgb(118, 118, 212);
-    border: none;
+    background-color: var(--light-blue);
+    border-radius: 5px;
+    border: var(--border-100);
     justify-self: end;
+    padding: 5px;
+}
+
+.hamburger-menu:hover {
+    filter: brightness(0.9);
+}
+
+.hamburger-menu:active {
+    background-color: var(--med-blue);
 }
 
 .hamburger-menu-icon {
@@ -87,11 +100,69 @@ header {
 }
 
 .hamburger-menu-icon span {
-    height: 23%;
+    height: 4px;
+    border-radius: 10px;
     background-color: black;
-    border-radius: 25%;
+    transition: opacity ease 0.2s;
 }
 
+@keyframes hamburger-span-1 {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(200%) rotate(0);
+    }
+
+    100% {
+        transform: translateY(200%) rotate(45deg);
+    }
+}
+
+@keyframes hamburger-span-1-reverse {
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(200%) rotate(0);
+    }
+
+    0% {
+        transform: translateY(200%) rotate(45deg);
+    }
+}
+
+@keyframes hamburger-span-3 {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-200%) rotate(0);
+    }
+
+    100% {
+        transform: translateY(-200%) rotate(-45deg);
+    }
+}
+
+@keyframes hamburger-span-3-reverse {
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-230%) rotate(0);
+    }
+
+    0% {
+        transform: translateY(-230%) rotate(-45deg);
+    }
+}
+
+// Nav links
 nav {
     border-bottom: var(--border-200);
     background-color: white;
@@ -168,12 +239,13 @@ nav li.socials a:active svg {
     fill: var(--med-magenta);
 }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 50em) {
     nav {
         font-size: var(--font-size-body-2);
-        padding-bottom: var(--size-050);
-        top: var(--nav-height);
-        transform: translate(calc(100% * -1));   
+        padding-bottom: var(--size-075);
+        top: 4rem;
+        transform: translateY(calc(100% * -1));
+        box-shadow: 0px -100px 0px white;
     }
 
     .full-width.mobile-nav-container {
