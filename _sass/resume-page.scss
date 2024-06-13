@@ -35,9 +35,8 @@
 
 .company.grid-9-column {
     grid-template-areas:
-        "t t t t e e e e e"
-        "n n n n e e e e e"
-        "d d d d e e e e e";
+        "t t t n n n d d d"
+        "e e e e e e e e e";
 }
 
 .company-title {
@@ -52,8 +51,8 @@
 
 .company-dates {
     grid-area: d;
-    border-bottom: 0;
-    border-right: var(--border-100);
+    // border-bottom: 0;
+    // border-right: var(--border-100);
 }
 
 .company-experience-description {
@@ -147,7 +146,7 @@
     }
 }
 
-@container skills (width < 50ch) {
+@container skills (width < 60ch) {
     .skills-container {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
@@ -162,7 +161,7 @@
     }
 }
 
-@media screen and (max-width: 50em) {
+@media screen and (max-width: 60em) {
     .company > * ,
     .school > *{
         padding: var(--size-100);
@@ -185,21 +184,21 @@
         padding-bottom: var(--size-150);
     }
 
-    .school.grid-9-column {
-        grid-template-areas:
-            "s s s s s s s s s"
-            "n n n n n d d d d";
-    }
+    // .school.grid-9-column {
+    //     grid-template-areas:
+    //         "s s s s s s s s s"
+    //         "n n n n n d d d d";
+    // }
 
-    .school-degree {
-        padding-top: var(--size-200);
-        border-bottom: var(--border-100);
-    }
+    // .school-degree {
+    //     padding-top: var(--size-200);
+    //     border-bottom: var(--border-100);
+    // }
     
-    .school-name {
-        border-left: none;
-        border-bottom: none;
-    }
+    // .school-name {
+    //     border-left: none;
+    //     border-bottom: none;
+    // }
 }
 
 @media print {
