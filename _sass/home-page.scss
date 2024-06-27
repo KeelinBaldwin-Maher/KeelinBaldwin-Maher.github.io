@@ -24,23 +24,38 @@
     grid-row: 1;
     margin: 0 auto;
     min-height: 200px;
+    width: 100%;
     height: 475px;
-    width: min(100%, 475px);
-    background-color: lightblue;
+    // width: min(100%, 475px);
     position: relative;
-}
-
-.splash-image canvas {
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    border: 1px solid black;
+    // background-color: lightblue;
 }
 
 .splash-image img {
     position: absolute;
-    width: min(76%, 355px);
+    inset: 0;
+    margin: auto;
+}
+
+#ufo {
+    width: min(70%, 345px);
     max-height: 100%;
+}
+
+#ufo-border {
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 570px;
+}
+
+@media screen and (max-width: 50em) {
+    #ufo-border {
+        max-width: 500px;
+    }
+}
+
+#ufo-canvas {
+    position: absolute;
     inset: 0;
     margin: auto;
 }
