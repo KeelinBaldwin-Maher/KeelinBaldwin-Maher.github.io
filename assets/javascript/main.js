@@ -10,7 +10,7 @@ function toggleNav() {
 
     if (st > prevScrollPos && st > navBar.clientHeight &&
         prevScrollPos !== 0 &&
-        !(st > (section2Top - 100) && st < section2Top) &&
+        !(st > (section2Top - 100) && st < section2Top) && // Because of the scroll-margin-top the actual top of the section is not accurate
         st !== section3Top) {
         navBar.classList.remove("show");
         navBar.classList.add("hide");
@@ -85,11 +85,6 @@ function handleScroll() {
 
 const mediaQueryWidth = window.matchMedia("(min-width: 50em)");
 
-// if (mediaQueryWidth.matches) {
-//     activeSection();
-//     window.addEventListener('scroll', handleScroll);
-// }
-
 function closeMobileNavMenu() {
     hamburgerMenu.ariaExpanded = "false";
     hamburgerMenuSpans[0].style.animation = "hamburger-span-1-reverse 0.3s ease 0s 1 normal forwards";
@@ -130,4 +125,5 @@ function handleMediaQueryWidth(event) {
 }
 
 mediaQueryWidth.addEventListener("change", handleMediaQueryWidth);
+
 handleMediaQueryWidth(mediaQueryWidth);

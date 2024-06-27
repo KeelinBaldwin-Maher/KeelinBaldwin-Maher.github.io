@@ -1,19 +1,19 @@
 :root {
-    --highlight-blue: hsl(229, 100%, 51%);
-    --highlight-yellow: hsl(50, 100%, 57%);
-    --highlight-magenta: hsl(333, 80%, 49%);
+    --highlight-blue: #0533ff;
+    --highlight-yellow: #ffda24;
+    --highlight-magenta: #e11973;
 
-    --med-magenta: hsl(333, 80%, 67%);
-    --med-blue: hsl(229, 90%, 74%);
-    --med-yellow: hsl(50, 90%, 77%);
+    --med-magenta: #ee68a4;
+    --med-blue: #8197f8;
+    --med-yellow: #f9e890;
 
-    --light-blue: hsl(209, 100%, 85%);
-    --light-magenta: hsl(333, 100%, 90%);
-    --light-yellow: hsl(46, 90%, 90%);
+    --light-blue: hsl(209, 77%, 85%);
+    --light-magenta: #ffcce3;
+    --light-yellow: #fcf2cf;
 
-    --dark-blue: hsl(209, 87%, 17%);
-    --dark-yellow: hsl(50, 100%, 37%);
-    --dark-magenta: hsl(333, 69%, 26%);
+    --dark-blue: #062d51;
+    --dark-yellow: #bd9d00;
+    --dark-magenta: #70153e;
 
     --font-primary: "Noto Sans", sans-serif;
     --font-secondary: "Courier Prime", monospace;
@@ -33,7 +33,7 @@
     --font-size-body: 1rem;
     --font-size-body-2: 1.25rem;
     --font-size-header-1: 2.5rem;
-    --font-size-header-2: 1.65rem;
+    --font-size-header-2: 1.8rem;
     --font-size-header-3: 1.25rem;
     --font-size-header-4: 1.15rem;
 
@@ -97,7 +97,7 @@ body {
 
 .button:active {
     transform: translate(0, 2px);
-    filter: brightness(90%);
+    filter: brightness(95%);
     box-shadow: 0px 0px 0 black;
     transition: transform 35ms,
         box-shadow 35ms,

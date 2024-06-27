@@ -1,7 +1,8 @@
 /* Welcome Section */
 .welcome-section.grid-9-column {
-    padding: var(--size-350) 0 var(--size-900) 0;
+    padding: var(--size-450) 0 var(--size-900) 0;
     gap: var(--size-175);
+    align-items: flex-start;
 }
 
 .welcome-text {
@@ -21,12 +22,27 @@
 .splash-image {
     grid-column: 5 / span 5;
     grid-row: 1;
-    display: flex;
+    margin: 0 auto;
     min-height: 200px;
+    height: 475px;
+    width: min(100%, 475px);
+    background-color: lightblue;
+    position: relative;
 }
 
-.splash-image div {
-    flex: 1 1;
+.splash-image canvas {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.splash-image img {
+    position: absolute;
+    width: min(76%, 355px);
+    max-height: 100%;
+    inset: 0;
+    margin: auto;
 }
 
 /* Projects Section*/
@@ -89,7 +105,7 @@
     gap: var(--size-125);
     grid-template-areas: 
         "c c c c c c c c c"
-        "f f f f f f t t t";
+        "t t t f f f f f f";
 }
 
 .contact-section .font-header-2 {
@@ -117,22 +133,22 @@
     border: var(--border-300);
     margin-bottom: var(--size-125);
     display: grid;
-    grid-template-columns: repeat(6, minmax(auto, 1fr));
+    grid-template-columns: repeat(8, minmax(auto, 1fr));
     grid-template-areas:
-        "nl ni ni el ei ei"
-        "sl si si si si si"
-        "ml ml ml ml ml ml"
-        "mi mi mi mi mi mi";
+        "nl ni ni ni el ei ei ei"
+        "sl si si si si si si si"
+        "ml ml ml ml ml ml ml ml"
+        "mi mi mi mi mi mi mi mi";
 }
 
-@container contact-form (width < 70ch) {
+@container contact-form (width < 75ch) {
     .contact-form-inner-container {
         grid-template-areas:
-        "nl ni ni ni ni ni"
-        "el ei ei ei ei ei"
-        "sl si si si si si"
-        "ml ml ml ml ml ml"
-        "mi mi mi mi mi mi";
+        "nl nl ni ni ni ni ni ni"
+        "el el ei ei ei ei ei ei"
+        "sl sl si si si si si si"
+        "ml ml ml ml ml ml ml ml"
+        "mi mi mi mi mi mi mi mi";
     }
 
     div.contact-form-inner-container #name {
