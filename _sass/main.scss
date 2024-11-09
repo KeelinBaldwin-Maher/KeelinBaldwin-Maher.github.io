@@ -200,7 +200,7 @@ body {
 
 /* This is from:  https://www.youtube.com/watch?v=c13gpBrnGEw */
 .content-grid {
-    --padding: 1.5em;
+    --padding: 1.75em;
     --max-width: 1050px; 
     --min-width: calc(100% - (var(--padding) * 2)); /* Multiplied by two for each end of columns */
 

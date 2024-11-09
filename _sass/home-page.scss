@@ -1,8 +1,23 @@
 /* Welcome Section */
+header {
+    --top-layer: #ffffff57;
+    position: relative;
+}
+
+.welcome-section {
+    --top-layer: #ffffff57;
+    position: relative;
+    background:
+        linear-gradient(var(--top-layer), var(--top-layer)),
+        radial-gradient(#ffffff00 2.3px, #ffffff 0.5px) 0% 0% / 15px 15px,
+        linear-gradient(180deg, var(--med-yellow) 10%, #ffffff 90%);
+}
+
 .welcome-section.grid-9-column {
     padding: var(--size-450) 0 var(--size-900) 0;
     gap: var(--size-175);
     align-items: flex-start;
+    position: relative;
 }
 
 .welcome-text {
@@ -38,7 +53,7 @@
 }
 
 #ufo {
-    width: min(70%, 345px);
+    width: min(65%, 345px);
     max-height: 100%;
 }
 
@@ -46,6 +61,17 @@
     aspect-ratio: 1;
     width: 100%;
     max-width: 570px;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+
+    // from {
+    //     transform: rotate(0deg);
+    // }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @media screen and (max-width: 50em) {
@@ -118,7 +144,7 @@
     padding: var(--size-700) 0;
     align-items: start;
     gap: var(--size-125);
-    grid-template-areas: 
+    grid-template-areas:
         "c c c c c c c c c"
         "t t t f f f f f f";
 }
@@ -159,18 +185,18 @@
 @container contact-form (width < 75ch) {
     .contact-form-inner-container {
         grid-template-areas:
-        "nl nl ni ni ni ni ni ni"
-        "el el ei ei ei ei ei ei"
-        "sl sl si si si si si si"
-        "ml ml ml ml ml ml ml ml"
-        "mi mi mi mi mi mi mi mi";
+            "nl nl ni ni ni ni ni ni"
+            "el el ei ei ei ei ei ei"
+            "sl sl si si si si si si"
+            "ml ml ml ml ml ml ml ml"
+            "mi mi mi mi mi mi mi mi";
     }
 
     div.contact-form-inner-container #name {
         border-radius: 0 5px 0 0;
         border-right: none;
     }
-    
+
     div.contact-form-inner-container #email {
         border-radius: 0 0 0 0;
         border-right: none;
@@ -256,12 +282,12 @@
 
 @media screen and (max-width: 120ch) {
     .contact-section {
-        grid-template-areas: 
+        grid-template-areas:
             "c c c c c c c c c"
             "t t t t t t t t t"
             "f f f f f f f f f";
     }
-} 
+}
 
 @media screen and (max-width: 50em) {
     .splash-image {
