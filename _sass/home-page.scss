@@ -4,7 +4,7 @@ header {
     position: relative;
 }
 
-.welcome-section {
+.welcome-section.full-width {
     --top-layer: #ffffff57;
     position: relative;
     background:
@@ -65,10 +65,6 @@ header {
 }
 
 @keyframes rotate {
-
-    // from {
-    //     transform: rotate(0deg);
-    // }
     to {
         transform: rotate(360deg);
     }
