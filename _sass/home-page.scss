@@ -5,17 +5,17 @@ header {
 }
 
 .welcome-section.full-width {
-    --top-layer: #ffffff57;
+    --top-layer: #ffffff0c;
     position: relative;
     background:
-        linear-gradient(var(--top-layer), var(--top-layer)),
-        radial-gradient(#ffffff00 2.3px, #ffffff 0.5px) 0% 0% / 15px 15px,
-        linear-gradient(180deg, var(--med-yellow) 10%, #ffffff 90%);
+        linear-gradient(#ffffff 25%, #00000000),
+        radial-gradient(#00000000 2.3px, #ffffff 0.5px) 0% 0% / 15px 15px,
+        linear-gradient(180deg, var(--med-yellow) 10%, var(--light-yellow) 90%);
 }
 
 .welcome-section.grid-9-column {
     padding: var(--size-450) 0 var(--size-900) 0;
-    gap: var(--size-175);
+    gap: var(--size-200);
     align-items: flex-start;
     position: relative;
 }
@@ -41,27 +41,29 @@ header {
     min-height: 200px;
     width: 100%;
     height: 475px;
-    // width: min(100%, 475px);
     position: relative;
-    // background-color: lightblue;
 }
 
 .splash-image img {
     position: absolute;
-    inset: 0;
     margin: auto;
 }
 
 #ufo {
-    width: min(65%, 345px);
+    width: min(65%, 300px);
     max-height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
 }
 
 #ufo-border {
+    inset: 0;
     aspect-ratio: 1;
     width: 100%;
     max-width: 570px;
-    animation: rotate 20s linear infinite;
+    //animation: rotate 20s linear infinite;
+    z-index: 1;
 }
 
 @keyframes rotate {
@@ -72,7 +74,7 @@ header {
 
 @media screen and (max-width: 50em) {
     #ufo-border {
-        max-width: 500px;
+        max-width: 470px;
     }
 }
 
@@ -82,8 +84,22 @@ header {
     margin: auto;
 }
 
+.wavy-border {
+    position: absolute;
+    width: 200%;
+    height: 5rem;
+    right: -50%;
+    top: -3%;
+    background: 
+        radial-gradient(13.05px at 50% 18.45px, var(--light-yellow) 99%, #0000 101%) calc(50% - 18px) 0/36px 100%,
+        radial-gradient(13.05px at 50% -9.45px, #0000 99%, var(--light-yellow) 101%) 50% 9px/36px 100% repeat-x;
+    ;
+}
+
 /* Projects Section*/
 .project-section {
+    position: relative;
+    --top-layer: #ffffff17;
     scroll-margin-top: var(--size-350);
     padding: var(--size-400) 0 var(--size-450) 0;
 }

@@ -18,18 +18,20 @@ function animate(animateObject) {
             animate(animateObject);
         }
     });
-    
+
 }
 
 const ufoAnimate = {
     ufo: document.querySelector("#ufo"),
-    duration: 1000,
-    loop: false,
+    duration: 900,
+    ufoFrames: 8,
+    loop: true,
     timing(currentTime) {
-        if (currentTime > 1000 || currentTime <= 0) {
-            return 1;
+        currentFrame = parseInt(currentTime / (this.duration / this.ufoFrames));
+        if (currentFrame <= 0) {
+            return 8;
         } else {
-            return parseInt(currentTime / 125);
+            return currentFrame;
         }
     },
     draw(imageState) {
@@ -37,7 +39,7 @@ const ufoAnimate = {
     }
 }
 
-animate(ufoAnimate);
+// animate(ufoAnimate);
 
 const ufo = document.querySelector("#ufo");
 let currentFrame = 1;

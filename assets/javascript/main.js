@@ -8,7 +8,7 @@ function toggleNav() {
     const section2Top = (sections[1]) ? sections[1].offsetTop : 0;
     const section3Top = (sections[2]) ? sections[2].offsetTop : 0;
 
-    if (st > prevScrollPos && st > navBar.clientHeight &&
+    if (st > prevScrollPos && st < navBar.clientHeight &&
         prevScrollPos !== 0 &&
         !(st > (section2Top - 100) && st < section2Top) && // Because of the scroll-margin-top the actual top of the section is not accurate
         st !== section3Top) {
@@ -127,3 +127,4 @@ function handleMediaQueryWidth(event) {
 mediaQueryWidth.addEventListener("change", handleMediaQueryWidth);
 
 handleMediaQueryWidth(mediaQueryWidth);
+
