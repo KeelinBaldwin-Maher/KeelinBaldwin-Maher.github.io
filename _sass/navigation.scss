@@ -195,7 +195,7 @@ nav .menu-link {
 nav .menu-link:hover {
     color: var(--highlight-magenta);
     font-weight: var(--font-weight-bold);
-    transition: color ease 0.1s, font-weight ease 0.1s, background-color ease 0.1s;
+    transition: color ease 0.1s, font-weight ease 0.1s;
 }
 
 nav .menu-link:active {
@@ -211,14 +211,14 @@ nav .menu-link::before {
     width: 0;
     position: absolute;
     top: var(--size-050);
-    transform: translateX(-50px);
+    transform: scale(0%);
     transition: width 0.2s, transform 0.2s;
 }
 
 nav .active::before {
     width: var(--size-500);
-    transform: translateX(0%);
-    transition: width 0.25s, transform 0.25s, background-color 0.25s;
+    transform: scale(100%);
+    transition: transform 0.2s;
 }
 
 nav li.socials {

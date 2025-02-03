@@ -1,25 +1,45 @@
 const navBar = document.querySelector("#primary-navigation");
+
 let prevScrollPos = 0;
-// https://andrewwalpole.com/blog/the-showy-hidey-nav-bar/
+
+/**
+ * Hides the navigation bar when scrolling down. Shows the navigation bar when scrolling up.
+ */
 function toggleNav() {
-    const st = document.documentElement.scrollTop;
+    // The value of scrollPos increases as you scroll down the page.
+    // scrollPos has it's highest value when the page is scrolled to the bottom.
+    // So if the scrollPos is less than prevScrollPos, it means the paged has been scrolled upward.
+    const scrollPos = document.documentElement.scrollTop;
 
+    // I don't want the nav bar to be hidden when:
+    //    - The user hasn't scrolled past the height of the nav bar
+    //    - The user has clicked to navigate to another section of the same page:
+    //        - Nav should show when scrollPos is at the top of the section
+    //            - The nav should be shown between the top of the 
+    //              section, and 100 px above the top of the section.
+
+    // All content is organized into sections. There should at least be 1 section on a page.
     const sections = document.querySelectorAll("section");
-    const section2Top = (sections[1]) ? sections[1].offsetTop : 0;
-    const section3Top = (sections[2]) ? sections[2].offsetTop : 0;
 
-    if (st > prevScrollPos && st < navBar.clientHeight &&
-        prevScrollPos !== 0 &&
-        !(st > (section2Top - 100) && st < section2Top) && // Because of the scroll-margin-top the actual top of the section is not accurate
-        st !== section3Top) {
+    let notAtTopOfSection = true;
+    if (sections.length > 1) {
+        for (let i = 0; i < sections.length && notAtTopOfSection; i++) {
+            let sectionTop = sections[i].offsetTop;
+            notAtTopOfSection = !(scrollPos > (sectionTop - 100) && scrollPos <= sectionTop);
+        }
+    }
+
+    let pastNavHeight = scrollPos > navBar.clientHeight;
+    
+    if (scrollPos > prevScrollPos && prevScrollPos !== 0 && notAtTopOfSection && pastNavHeight) {
         navBar.classList.remove("show");
         navBar.classList.add("hide");
-
-    } else if (st < prevScrollPos) {
+    } else {
         navBar.classList.remove("hide");
         navBar.classList.add("show");
     }
-    prevScrollPos = st;
+    
+    prevScrollPos = scrollPos;
 }
 
 function activeSection() {

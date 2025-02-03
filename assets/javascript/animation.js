@@ -23,7 +23,7 @@ function animate(animateObject) {
 
 const ufoAnimate = {
     ufo: document.querySelector("#ufo"),
-    duration: 900,
+    duration: 850,
     ufoFrames: 8,
     loop: true,
     timing(currentTime) {
@@ -39,7 +39,7 @@ const ufoAnimate = {
     }
 }
 
-// animate(ufoAnimate);
+animate(ufoAnimate);
 
 const ufo = document.querySelector("#ufo");
 let currentFrame = 1;
@@ -52,4 +52,4 @@ function animateFrame() {
     ufo.src = ufo.src = `/assets/images/ufo/ufo-frame-${currentFrame}.svg`;
 }
 
-//setInterval(animateFrame, 72);
+// setInterval(animateFrame, 72);

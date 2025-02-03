@@ -7,10 +7,12 @@ header {
 .welcome-section.full-width {
     --top-layer: #ffffff0c;
     position: relative;
+    overflow: hidden;
     background:
         linear-gradient(#ffffff 25%, #00000000),
         radial-gradient(#00000000 2.3px, #ffffff 0.5px) 0% 0% / 15px 15px,
         linear-gradient(180deg, var(--med-yellow) 10%, var(--light-yellow) 90%);
+    padding: 0 0 var(--size-300) 0;
 }
 
 .welcome-section.grid-9-column {
@@ -39,31 +41,40 @@ header {
     grid-row: 1;
     margin: 0 auto;
     min-height: 200px;
-    width: 100%;
     height: 475px;
+    width: 100%;
     position: relative;
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }
 
-.splash-image img {
-    position: absolute;
-    margin: auto;
-}
+// .splash-image img {
+//     position: absolute;
+//     margin: auto;
+// }
 
 #ufo {
-    width: min(65%, 300px);
-    max-height: 100%;
-    position: absolute;
-    inset: 0;
+    //max-height: 100%;
+    // position: absolute;
+    // margin: auto;
+    // inset: 0;
+    width: min(65%, 305px);
+    height: 55%;
     z-index: 2;
+    grid-row: 1;
+    grid-column: 1;
 }
 
 #ufo-border {
-    inset: 0;
+    // inset: 0;
     aspect-ratio: 1;
     width: 100%;
     max-width: 570px;
-    //animation: rotate 20s linear infinite;
+    animation: rotate 20s linear infinite;
     z-index: 1;
+    grid-row: 1;
+    grid-column: 1;
 }
 
 @keyframes rotate {
@@ -101,7 +112,7 @@ header {
     position: relative;
     --top-layer: #ffffff17;
     scroll-margin-top: var(--size-350);
-    padding: var(--size-400) 0 var(--size-450) 0;
+    padding: var(--size-450) 0 var(--size-450) 0;
 }
 
 .project-section .font-header-2 {
@@ -153,7 +164,7 @@ header {
 
 /* Contact Section*/
 .contact-section {
-    padding: var(--size-700) 0;
+    padding: var(--size-600) 0 var(--size-700) 0;
     align-items: start;
     gap: var(--size-125);
     grid-template-areas:
