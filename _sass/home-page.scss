@@ -116,7 +116,7 @@ header {
 }
 
 .project-section .font-header-2 {
-    padding-bottom: var(--size-150);
+    padding-bottom: var(--size-175);
 }
 
 .project-section :last-child {
@@ -164,6 +164,7 @@ header {
 
 /* Contact Section*/
 .contact-section {
+    scroll-margin-top: var(--size-350);
     padding: var(--size-600) 0 var(--size-700) 0;
     align-items: start;
     gap: var(--size-125);

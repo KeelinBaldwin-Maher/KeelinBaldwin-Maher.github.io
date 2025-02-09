@@ -15,20 +15,20 @@
     font-size: 1.15rem;
 }
 
-.experience >* ,
-.education > * {
+.experience>*,
+.education>* {
     border: var(--border-100);
     border-bottom: 0;
 }
 
-.experience .font-header-2, 
+.experience .font-header-2,
 .education .font-header-2,
 .skills .font-header-2 {
     padding: var(--size-175) var(--size-125) var(--size-100) var(--size-125);
 }
 
-.company > * ,
-.school > * {
+.company>*,
+.school>* {
     padding: var(--size-125);
     border-bottom: var(--border-100);
 }
@@ -162,11 +162,12 @@
 }
 
 @media screen and (max-width: 60em) {
-    .company > * ,
-    .school > *{
+
+    .company>*,
+    .school>* {
         padding: var(--size-100);
     }
-    
+
     .company.grid-9-column {
         grid-template-areas:
             "t t t t t t t t t"
@@ -174,7 +175,8 @@
             "e e e e e e e e e";
     }
 
-    .company-title, .company-dates {
+    .company-title,
+    .company-dates {
         border-right: none;
         border-bottom: var(--border-100);
         padding-top: var(--size-125);
@@ -185,54 +187,27 @@
     }
 }
 
+
 @media print {
     :root {
         font-size: 13px;
     }
 
-    #resume .font-header-1,
-    .company.grid-9-column, .experience .font-header-2, .company, 
-    .company-experience-description, 
-    .school.grid-9-column, .education .font-header-2, .school-degree, .school-degree,
-    .skills, .skills .font-header-2{
-        display: flex;
-        flex-flow: row wrap;
-        padding: 0;
-        margin: 0;
-        flex: 1 100%;
-    }
-
-    .experience .font-header-2, .education .font-header-2, .skills .font-header-2 {
-        padding: var(--size-150) 0 var(--size-050) 0;
-    }
-
-    .company-title, .company-name, .company-dates, .school-name, .school-dates {
-        padding: 0;
-        flex: 1; 
-    }
-
-    .company-experience-description {
-        padding: var(--size-050) 0 var(--size-200) var(--size-100);
-    }
-
-    .school-degree {
-        padding: 0 0 var(--size-050) 0;
-    }
-
-    .school-name, .school-dates {
-        padding: 0 0 var(--size-175) 0;
+    .skills .font-header-2 {
+        border-bottom: none;
     }
 
     .skills-container {
-        display: block;
+        border: var(--border-100);
     }
 
     .skill {
-        padding: 0 0 var(--size-050) 0;
-        aspect-ratio: auto;
+        border: none !important;
     }
 
-    header, nav, footer {
+    header,
+    nav,
+    footer {
         display: none !important;
     }
 }
