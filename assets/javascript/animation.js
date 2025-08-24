@@ -1,5 +1,7 @@
+let start = 0;
+
 function animate(animateObject) {
-    let start = performance.now();
+    start = performance.now();
 
     requestAnimationFrame(function drawNextFrame(time) {
         let currentTime = (time - start);
@@ -40,16 +42,3 @@ const ufoAnimate = {
 }
 
 animate(ufoAnimate);
-
-const ufo = document.querySelector("#ufo");
-let currentFrame = 1;
-
-function animateFrame() {
-    currentFrame++;
-    if (currentFrame > 8) {
-        currentFrame = 1;
-    }
-    ufo.src = ufo.src = `/assets/images/ufo/ufo-frame-${currentFrame}.svg`;
-}
-
-// setInterval(animateFrame, 72);

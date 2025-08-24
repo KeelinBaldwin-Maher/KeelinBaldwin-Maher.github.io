@@ -101,6 +101,11 @@
     grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
+.skills-container.print {
+    visibility: hidden;
+    display: none;
+}
+
 .skill {
     aspect-ratio: 1 / 1;
     overflow: hidden;
@@ -198,11 +203,24 @@
     }
 
     .skills-container {
-        border: var(--border-100);
+        visibility: hidden;
+        display: none;
     }
 
-    .skill {
-        border: none !important;
+    .skills-container.print {
+        visibility: visible;
+        display: grid;
+        padding: var(--size-125);
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skills-container.print li {
+        margin-left: var(--size-100);
+        margin-bottom: var(--size-075);
+    }
+
+    .skills-container.print {
+        border: var(--border-100);
     }
 
     header,

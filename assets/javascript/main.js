@@ -2,6 +2,16 @@ const navBar = document.querySelector("#primary-navigation");
 
 let prevScrollPos = 0;
 
+function navLinks() {
+    // All the links have data-name values that match the section they link to
+    let navAnchors = document.querySelectorAll(`nav a`);
+    for (i = 0; i < navAnchors.length; i++) {
+        console.log(navAnchors[i]);
+    }
+}
+
+navLinks();
+
 /**
  * Hides the navigation bar when scrolling down. Shows the navigation bar when scrolling up.
  */

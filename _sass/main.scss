@@ -215,8 +215,8 @@ body {
 }
 
 /* selector > * - selects all direct children of selector */
-.content-grid >*,
-.full-width >* {
+.content-grid > *, // All direct children of an element with the class .content grid
+.full-width > * {
     grid-column: content;
 }
 

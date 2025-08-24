@@ -37,5 +37,10 @@ title: Keelin's Resume
                 <p class="skill bkg-light-blue font-mono">{{ skill }}</p>
             {% endfor %}
         </div>
+        <ul class="skills-container print bkg-light-blue">
+            {% for skill in site.data.resume.skills %}
+                <li class="font-mono">{{ skill }}</p>
+            {% endfor %}
+        </ul>
    </article>
 </section>
