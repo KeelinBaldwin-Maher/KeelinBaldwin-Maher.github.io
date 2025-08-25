@@ -2,15 +2,19 @@ const navBar = document.querySelector("#primary-navigation");
 
 let prevScrollPos = 0;
 
-function navLinks() {
+function clickOnNavBar() {
     // All the links have data-name values that match the section they link to
     let navAnchors = document.querySelectorAll(`nav a`);
-    for (i = 0; i < navAnchors.length; i++) {
-        console.log(navAnchors[i]);
+    for (i = 0; i < navAnchors.length ; i++) {
+        if (navAnchors[i].attributes[`data-name`]) {
+            navAnchors[i].addEventListener("click", () => {
+                navBar.classList.remove("hide");
+                navBar.classList.add("show");
+            });
+        }
     }
+    return true;
 }
-
-navLinks();
 
 /**
  * Hides the navigation bar when scrolling down. Shows the navigation bar when scrolling up.
@@ -35,7 +39,7 @@ function toggleNav() {
     if (sections.length > 1) {
         for (let i = 0; i < sections.length && notAtTopOfSection; i++) {
             let sectionTop = sections[i].offsetTop;
-            notAtTopOfSection = !(scrollPos > (sectionTop - 100) && scrollPos <= sectionTop);
+            notAtTopOfSection = !(scrollPos > (sectionTop - 125) && scrollPos <= sectionTop);
         }
     }
 
