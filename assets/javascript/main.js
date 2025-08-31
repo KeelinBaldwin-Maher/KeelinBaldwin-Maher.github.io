@@ -2,22 +2,15 @@ const navBar = document.querySelector("#primary-navigation");
 
 let prevScrollPos = 0;
 
-function clickOnNavBar() {
-    // All the links have data-name values that match the section they link to
-    let navAnchors = document.querySelectorAll(`nav a`);
-    for (i = 0; i < navAnchors.length ; i++) {
-        if (navAnchors[i].attributes[`data-name`]) {
-            navAnchors[i].addEventListener("click", () => {
-                navBar.classList.remove("hide");
-                navBar.classList.add("show");
-            });
-        }
-    }
-    return true;
+function handleDesktopNavClick() {
+    prevScrollPos = 0;
 }
 
 /**
  * Hides the navigation bar when scrolling down. Shows the navigation bar when scrolling up.
+ * I want the nav bar to be hidden when: 
+ *     - The user hasn't scrolled past the height of the nav bar 
+ *     - The user has clicked to navigate to another section of the same page
  */
 function toggleNav() {
     // The value of scrollPos increases as you scroll down the page.
@@ -25,34 +18,16 @@ function toggleNav() {
     // So if the scrollPos is less than prevScrollPos, it means the paged has been scrolled upward.
     const scrollPos = document.documentElement.scrollTop;
 
-    // I don't want the nav bar to be hidden when:
-    //    - The user hasn't scrolled past the height of the nav bar
-    //    - The user has clicked to navigate to another section of the same page:
-    //        - Nav should show when scrollPos is at the top of the section
-    //            - The nav should be shown between the top of the 
-    //              section, and 100 px above the top of the section.
-
-    // All content is organized into sections. There should at least be 1 section on a page.
-    const sections = document.querySelectorAll("section");
-
-    let notAtTopOfSection = true;
-    if (sections.length > 1) {
-        for (let i = 0; i < sections.length && notAtTopOfSection; i++) {
-            let sectionTop = sections[i].offsetTop;
-            notAtTopOfSection = !(scrollPos > (sectionTop - 125) && scrollPos <= sectionTop);
-        }
-    }
-
     let pastNavHeight = scrollPos > navBar.clientHeight;
-    
-    if (scrollPos > prevScrollPos && prevScrollPos !== 0 && notAtTopOfSection && pastNavHeight) {
+
+    if (scrollPos > prevScrollPos && pastNavHeight && prevScrollPos != 0) {
         navBar.classList.remove("show");
         navBar.classList.add("hide");
     } else {
         navBar.classList.remove("hide");
         navBar.classList.add("show");
     }
-    
+
     prevScrollPos = scrollPos;
 }
 
@@ -139,7 +114,10 @@ function handleMediaQueryWidth(event) {
         // Reset nav
         navBar.classList.remove("hide");
         navBar.classList.remove("show");
-        navMenuLinks.forEach((menuLink) => menuLink.removeEventListener("click", closeMobileNavMenu));
+        navMenuLinks.forEach((menuLink) => 
+            menuLink.removeEventListener("click", closeMobileNavMenu));
+        navMenuLinks.forEach((menuLink) => 
+            menuLink.addEventListener("click", handleDesktopNavClick));
 
         activeSection();
         window.addEventListener('scroll', handleScroll);
@@ -152,7 +130,10 @@ function handleMediaQueryWidth(event) {
         navBar.classList.remove("show");
         const currentActiveLink = document.querySelector("nav .active");
         (currentActiveLink) ? currentActiveLink.classList.remove("active") : "";
-        navMenuLinks.forEach((menuLink) => {menuLink.addEventListener("click", closeMobileNavMenu);});
+        navMenuLinks.forEach((menuLink) => 
+            menuLink.removeEventListener("click", handleDesktopNavClick));
+        navMenuLinks.forEach((menuLink) => 
+            menuLink.addEventListener("click", closeMobileNavMenu));
 
         window.removeEventListener('scroll', handleScroll);
     }
@@ -161,4 +142,3 @@ function handleMediaQueryWidth(event) {
 mediaQueryWidth.addEventListener("change", handleMediaQueryWidth);
 
 handleMediaQueryWidth(mediaQueryWidth);
-

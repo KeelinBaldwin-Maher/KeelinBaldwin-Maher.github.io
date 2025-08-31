@@ -41,4 +41,7 @@ const ufoAnimate = {
     }
 }
 
-animate(ufoAnimate);
+// Don't try to animate the ufo if it is not on the page.
+if (ufoAnimate.ufo) {
+    animate(ufoAnimate);
+}
